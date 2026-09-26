@@ -67,6 +67,16 @@
     "bmw-1-series-m-sport-black-full-valet-urmston-latin-king-detailing-17.jpg":  { "vehicle": "bmw-1-series-m-sport", "vehicleLabel": "BMW 1 Series M Sport", "alt": "BMW 1 Series M Sport in Midnight Black full valet by Latin King Detailing, Urmston" },
 
     "bmw-i7-black-exterior-detailing-manchester-latin-king-detailing-18.jpg":              { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 exterior detailing by Latin King Detailing, Manchester" },
-    "bmw-i7-interior-detailing-leather-dashboard-manchester-latin-king-detailing-19.jpg":  { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 interior detail featuring leather dashboard by Latin King Detailing, Manchester" }
+    "bmw-i7-interior-detailing-leather-dashboard-manchester-latin-king-detailing-19.jpg":  { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 interior detail featuring leather dashboard by Latin King Detailing, Manchester" },
+
+    "vw-transporter-t7-tan-leather-interior-mobile-valet-urmston-latin-king-detailing-20.jpg":                               { "vehicle": "vw-transporter-t7", "vehicleLabel": "VW Transporter T7", "alt": "VW Transporter T7 tan quilted leather interior mobile valet by Latin King Detailing, Urmston" },
+    "vw-transporter-t7-navy-blue-rear-exterior-mobile-detailing-manchester-latin-king-detailing-21.jpg":                     { "vehicle": "vw-transporter-t7", "vehicleLabel": "VW Transporter T7", "alt": "VW Transporter T7 in Navy Blue rear exterior mobile detailing by Latin King Detailing, Manchester" },
+    "vw-transporter-t7-navy-blue-headlight-detail-mobile-valet-urmston-latin-king-detailing-22.jpg":                         { "vehicle": "vw-transporter-t7", "vehicleLabel": "VW Transporter T7", "alt": "VW Transporter T7 front headlight detail after mobile valet by Latin King Detailing, Urmston" },
+
+    "bmw-i7-black-snow-foam-car-wash-three-quarter-manchester-latin-king-detailing-23.jpg":                                  { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 in black during snow foam mobile car wash by Latin King Detailing, Manchester" },
+    "bmw-i7-black-front-mobile-valet-greater-manchester-latin-king-detailing-24.jpg":                                        { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 black front view after mobile valet by Latin King Detailing, Greater Manchester" },
+    "bmw-i7-black-exterior-three-quarter-mobile-detailing-manchester-latin-king-detailing-25.jpg":                           { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 black exterior three-quarter view mobile detailing by Latin King Detailing, Manchester" },
+    "bmw-i7-red-merino-leather-interior-steering-wheel-manchester-latin-king-detailing-26.jpg":                              { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 red Merino leather interior and steering wheel after interior detail by Latin King Detailing, Manchester" },
+    "bmw-i7-red-merino-leather-rear-seats-interior-detail-manchester-latin-king-detailing-27.jpg":                           { "vehicle": "bmw-i7", "vehicleLabel": "BMW i7", "alt": "BMW i7 red Merino leather rear seats after interior valet by Latin King Detailing, Manchester" }
   }
 }

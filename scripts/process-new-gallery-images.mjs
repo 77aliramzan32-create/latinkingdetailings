@@ -141,6 +141,50 @@ const IMAGE_META = {
     description: 'Interior detailing on a BMW i7 featuring the leather dashboard by Latin King Detailing — interior car care in Manchester, Greater Manchester.',
     keywords:    ['BMW i7', 'BMW i7 interior', 'leather dashboard', 'interior detailing', 'Manchester'],
   },
+
+  // ── VW Transporter T7 batch ───────────────────────────────────────────────
+  'vw-transporter-t7-tan-leather-interior-mobile-valet-urmston-latin-king-detailing-20': {
+    alt:         'VW Transporter T7 tan quilted leather interior mobile valet by Latin King Detailing, Urmston',
+    description: 'Tan quilted leather interior valet on a VW Transporter T7 by Latin King Detailing — mobile car care in Urmston, Greater Manchester.',
+    keywords:    ['VW Transporter', 'Volkswagen Transporter', 'T7', 'tan leather interior', 'interior valet', 'Urmston'],
+  },
+  'vw-transporter-t7-navy-blue-rear-exterior-mobile-detailing-manchester-latin-king-detailing-21': {
+    alt:         'VW Transporter T7 in Navy Blue rear exterior mobile detailing by Latin King Detailing, Manchester',
+    description: 'Rear exterior mobile detailing on a Navy Blue VW Transporter T7 by Latin King Detailing — mobile car care in Manchester, Greater Manchester.',
+    keywords:    ['VW Transporter', 'Volkswagen Transporter', 'T7', 'Navy Blue', 'rear exterior', 'mobile detailing', 'Manchester'],
+  },
+  'vw-transporter-t7-navy-blue-headlight-detail-mobile-valet-urmston-latin-king-detailing-22': {
+    alt:         'VW Transporter T7 front headlight detail after mobile valet by Latin King Detailing, Urmston',
+    description: 'Front headlight close-up detail after mobile valet on a Navy Blue VW Transporter T7 by Latin King Detailing — mobile car care in Urmston, Greater Manchester.',
+    keywords:    ['VW Transporter', 'Volkswagen Transporter', 'T7', 'headlight detail', 'mobile valet', 'Urmston'],
+  },
+
+  // ── BMW i7 additional batch ───────────────────────────────────────────────
+  'bmw-i7-black-snow-foam-car-wash-three-quarter-manchester-latin-king-detailing-23': {
+    alt:         'BMW i7 in black during snow foam mobile car wash by Latin King Detailing, Manchester',
+    description: 'Snow foam mobile car wash on a black BMW i7 by Latin King Detailing — mobile car care in Manchester, Greater Manchester.',
+    keywords:    ['BMW i7', 'snow foam', 'mobile car wash', 'black BMW i7', 'Manchester'],
+  },
+  'bmw-i7-black-front-mobile-valet-greater-manchester-latin-king-detailing-24': {
+    alt:         'BMW i7 black front view after mobile valet by Latin King Detailing, Greater Manchester',
+    description: 'Front view of a black BMW i7 after mobile valet by Latin King Detailing — mobile car care across Greater Manchester.',
+    keywords:    ['BMW i7', 'BMW i7 front', 'mobile valet', 'black BMW', 'Greater Manchester'],
+  },
+  'bmw-i7-black-exterior-three-quarter-mobile-detailing-manchester-latin-king-detailing-25': {
+    alt:         'BMW i7 black exterior three-quarter view mobile detailing by Latin King Detailing, Manchester',
+    description: 'Three-quarter exterior view of a black BMW i7 during mobile detailing by Latin King Detailing — mobile car care in Manchester, Greater Manchester.',
+    keywords:    ['BMW i7', 'BMW i7 exterior', 'three-quarter view', 'mobile detailing', 'Manchester'],
+  },
+  'bmw-i7-red-merino-leather-interior-steering-wheel-manchester-latin-king-detailing-26': {
+    alt:         'BMW i7 red Merino leather interior and steering wheel after interior detail by Latin King Detailing, Manchester',
+    description: 'Red Merino leather interior and steering wheel after interior detail on a BMW i7 by Latin King Detailing — interior car care in Manchester, Greater Manchester.',
+    keywords:    ['BMW i7', 'BMW i7 interior', 'Merino leather', 'red interior', 'steering wheel', 'interior detail', 'Manchester'],
+  },
+  'bmw-i7-red-merino-leather-rear-seats-interior-detail-manchester-latin-king-detailing-27': {
+    alt:         'BMW i7 red Merino leather rear seats after interior valet by Latin King Detailing, Manchester',
+    description: 'Red Merino leather rear seats after interior valet on a BMW i7 by Latin King Detailing — interior car care in Manchester, Greater Manchester.',
+    keywords:    ['BMW i7', 'BMW i7 rear seats', 'Merino leather', 'red leather seats', 'interior valet', 'Manchester'],
+  },
 };
 
 // ─── Write EXIF + XMP geo metadata ────────────────────────────────────────────
@@ -208,6 +252,7 @@ async function main() {
     let largestPath   = null;
     const inputSize   = statSync(inputPath).size;
     let totalOut      = 0;
+    let isNew         = false;
 
     for (const w of WIDTHS) {
       const outName = `${slug}-${w}w.webp`;
@@ -220,6 +265,7 @@ async function main() {
         if (w === WIDTHS[0]) largestPath = outPath;
         continue;
       }
+      isNew = true;
 
       if (!DRY) {
         try {
@@ -258,15 +304,17 @@ async function main() {
       if (tagResult !== true) tagErrors.push({ file: basename(largestPath), error: tagResult });
     }
 
-    newEntries.push({
-      slug,
-      service: 'gallery',
-      alt:     meta.alt,
-      widths:  outputWidths,
-      profile: 'gallery',
-      src:     `/images/gallery/${slug}-${WIDTHS[0]}w.webp`,
-      srcset:  outputWidths.map((w) => `/images/gallery/${slug}-${w}w.webp ${w}w`).join(', '),
-    });
+    if (isNew) {
+      newEntries.push({
+        slug,
+        service: 'gallery',
+        alt:     meta.alt,
+        widths:  outputWidths,
+        profile: 'gallery',
+        src:     `/images/gallery/${slug}-${WIDTHS[0]}w.webp`,
+        srcset:  outputWidths.map((w) => `/images/gallery/${slug}-${w}w.webp ${w}w`).join(', '),
+      });
+    }
   }
 
   // ─── Append to images.ts ──────────────────────────────────────────────────
