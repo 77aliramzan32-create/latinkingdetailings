@@ -27,7 +27,7 @@ export const BUSINESS = {
   phoneDisplay: "07482 225323",
   email: "latinkingdetailing@yahoo.com",
   domain: "latinkingdetailing.co.uk",
-  url: "https://latinkingdetailing.co.uk",
+  url: "https://www.latinkingdetailing.co.uk",
 
   // Booking / availability
   availability: "Open 24/7 — call or message anytime.",

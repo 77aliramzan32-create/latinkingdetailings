@@ -48,7 +48,7 @@ const jsonLd = {
   "@graph": [
     ...GALLERY_IMAGES.map((img) => ({
       "@type": "ImageObject",
-      contentUrl: `https://latinkingdetailing.co.uk${img.src}`,
+      contentUrl: `${BUSINESS.url}${img.src}`,
       name: img.alt,
       description: img.alt,
       caption: img.alt,
@@ -59,10 +59,10 @@ const jsonLd = {
       creator: {
         "@type": "LocalBusiness",
         name: "Latin King Detailing",
-        url: "https://latinkingdetailing.co.uk",
+        url: BUSINESS.url,
       },
-      license: "https://latinkingdetailing.co.uk/",
-      acquireLicensePage: "https://latinkingdetailing.co.uk/contact",
+      license: `${BUSINESS.url}/`,
+      acquireLicensePage: `${BUSINESS.url}/contact`,
     })),
   ],
 };

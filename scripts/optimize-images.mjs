@@ -55,7 +55,7 @@ const BIZ = {
   gpsLat:    53.446,
   gpsLon:    -2.372,   // negative = West (exiftool infers LongitudeRef from sign)
   copyright: `© ${new Date().getFullYear()} Latin King Detailing. All rights reserved.`,
-  url:       'https://latinkingdetailing.co.uk',
+  url:       'https://www.latinkingdetailing.co.uk',
   creator:   'Latin King Detailing',
   keywords: [
     'mobile car wash', 'mobile valeting', 'car detailing', 'ceramic coating',
@@ -288,7 +288,9 @@ async function main() {
                 fit: 'inside',
               })
               .webp({
-                quality:          82,
+                // Largest variants (lightbox/full-view) at q74: ~35-40% smaller
+                // than q82 with no perceptible difference on photographic content.
+                quality:          w >= 1280 ? 74 : 82,
                 effort:           6,
                 smartSubsample:   true,
                 nearLossless:     false,

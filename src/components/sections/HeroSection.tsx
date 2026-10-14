@@ -114,7 +114,7 @@ export function HeroSection() {
           >
             Exceptional
             <br />
-            Car Detailing,
+            Car Detailing in Manchester,
             <br />
             <span className="gradient-text-red">Delivered</span> to Your Door
           </motion.h1>

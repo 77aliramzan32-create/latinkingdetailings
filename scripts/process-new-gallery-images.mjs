@@ -32,7 +32,7 @@ const BIZ = {
   gpsLat:      53.446,
   gpsLon:      -2.372,
   copyright:   `© ${new Date().getFullYear()} Latin King Detailing. All rights reserved.`,
-  url:         'https://latinkingdetailing.co.uk',
+  url:         'https://www.latinkingdetailing.co.uk',
   creator:     'Latin King Detailing',
   keywords: [
     'mobile car wash', 'mobile valeting', 'car detailing', 'ceramic coating',
