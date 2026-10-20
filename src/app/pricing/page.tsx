@@ -9,12 +9,12 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Car Detailing Prices Manchester | Mobile Valeting & Ceramic Coating Costs | Latin King",
   description:
-    "Car detailing prices in Manchester — mini valet from £40, full detail from £120, paint correction from £200, ceramic coating from £250. Fixed quotes, no hidden costs. Call 07482 225323.",
+    "Car detailing prices in Manchester — mini valet from £55, full detail from £120, paint correction from £300, ceramic coating from £180. Fixed quotes, no hidden costs. Call 07482 225323.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Car Detailing Prices Manchester | Latin King Detailing",
     description:
-      "Transparent car detailing prices in Manchester. Mini valet from £40 · Ceramic coating from £250 · All prices fixed before work starts.",
+      "Transparent car detailing prices in Manchester. Mini valet from £55 · Ceramic coating from £180 · All prices fixed before work starts.",
     type: "website",
     url: `${BUSINESS.url}/pricing`,
   },
@@ -24,7 +24,7 @@ const PRICE_TIERS = [
   {
     slug: "mobile-valeting",
     name: "Mobile Valeting",
-    priceFrom: 40,
+    priceFrom: 55,
     duration: "1.5–3.5 hours",
     tagline: "The everyday clean",
     description:
@@ -65,7 +65,7 @@ const PRICE_TIERS = [
   {
     slug: "paint-correction",
     name: "Paint Correction",
-    priceFrom: 200,
+    priceFrom: 300,
     duration: "6–12 hours",
     tagline: "Permanent defect removal",
     description:
@@ -84,7 +84,7 @@ const PRICE_TIERS = [
   {
     slug: "ceramic-coating",
     name: "Ceramic Coating",
-    priceFrom: 350,
+    priceFrom: 180,
     duration: "1–2 days",
     tagline: "2–3 year protection",
     description:
@@ -186,12 +186,12 @@ const FAQS = [
   {
     question: "How much does a mini valet cost in Manchester?",
     answer:
-      "A mobile mini valet in Manchester starts from £40 at Latin King Detailing. This covers exterior wash, wheel clean, interior vacuum and wipe-down. A full valet starts from £80.",
+      "A mobile mini valet in Manchester starts from £55 at Latin King Detailing. This covers exterior wash, wheel clean, interior vacuum and wipe-down. A full valet starts from £80.",
   },
   {
     question: "How much does ceramic coating cost in Manchester?",
     answer:
-      "Professional ceramic coating in Manchester starts from £250. The exact price depends on vehicle size and paint condition. Paint decontamination and machine polishing are always included in our ceramic coating packages.",
+      "Professional ceramic coating in Manchester starts from £180. The exact price depends on vehicle size and paint condition. Paint decontamination and machine polishing are always included in our ceramic coating packages.",
   },
   {
     question: "Do you charge extra for large vehicles?",

@@ -37,7 +37,7 @@ const FAQS = [
   {
     question: "How much does a mini valet cost near Manchester?",
     answer:
-      "A mobile mini valet in Manchester starts from £40 at Latin King Detailing. This is a fully mobile service — we come to your home or workplace with our own water, power and products.",
+      "A mobile mini valet in Manchester starts from £55 at Latin King Detailing. This is a fully mobile service — we come to your home or workplace with our own water, power and products.",
   },
   {
     question: "How long does a mini valet take?",
@@ -134,7 +134,7 @@ export default function MiniValetVsFullValetPage() {
                 <h2 className="mb-4">The quick summary</h2>
                 <div className="grid sm:grid-cols-2 gap-5">
                   {[
-                    { name: "Mini Valet", price: "From £40", time: "1.5–2 hours", best: "Regular maintenance clean" },
+                    { name: "Mini Valet", price: "From £55", time: "1.5–2 hours", best: "Regular maintenance clean" },
                     { name: "Full Valet", price: "From £80", time: "2.5–3.5 hours", best: "Thorough reset or first valet in a while" },
                   ].map((v) => (
                     <div key={v.name} className="card p-6" style={{ background: "var(--color-base-800)" }}>
@@ -274,7 +274,7 @@ export default function MiniValetVsFullValetPage() {
       <CTASection
         eyebrow="Mobile Valeting — Greater Manchester"
         title="Book a Mini Valet or Full Valet Today"
-        description="We come to your door across Greater Manchester — fully equipped with own water, power and professional products. Fixed quote before we start. From £40."
+        description="We come to your door across Greater Manchester — fully equipped with own water, power and professional products. Fixed quote before we start. From £55."
         primaryCTA="Book My Valet"
       />
     </>

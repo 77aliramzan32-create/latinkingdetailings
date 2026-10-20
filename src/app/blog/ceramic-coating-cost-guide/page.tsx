@@ -27,7 +27,7 @@ const FAQS = [
   {
     question: "How much does ceramic coating cost in the UK?",
     answer:
-      "Professional ceramic coating in the UK costs between £200 and £2,000+ depending on vehicle size, paint condition and the grade of coating applied. A professional coating on a standard-sized car from a reputable mobile detailer in Manchester starts from £250 at Latin King Detailing. This always includes full paint decontamination and machine polishing before application.",
+      "Professional ceramic coating in the UK costs between £200 and £2,000+ depending on vehicle size, paint condition and the grade of coating applied. A professional coating on a standard-sized car from a reputable mobile detailer in Manchester starts from £180 at Latin King Detailing. This always includes full paint decontamination and machine polishing before application.",
   },
   {
     question: "Is ceramic coating worth it in the UK?",
@@ -145,7 +145,7 @@ export default function CeramicCoatingCostGuidePage() {
                   </table>
                 </div>
                 <p className="text-xs mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  Prices based on professional mobile detailing in Manchester / Greater Manchester. Latin King Detailing starts from £250.
+                  Prices based on professional mobile detailing in Manchester / Greater Manchester. Latin King Detailing starts from £180.
                 </p>
               </div>
 
@@ -293,7 +293,7 @@ export default function CeramicCoatingCostGuidePage() {
       <CTASection
         eyebrow="Professional Ceramic Coating — Manchester"
         title="Get Your Ceramic Coating Quote Today"
-        description="Professional SiO₂ ceramic coating from £250. Full paint decontamination and machine polish always included. Fixed price confirmed before we start."
+        description="Professional SiO₂ ceramic coating from £180. Full paint decontamination and machine polish always included. Fixed price confirmed before we start."
         primaryCTA="Get My Coating Quote"
       />
     </>

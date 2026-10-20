@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { GMBMapSection } from "@/components/sections/GMBMapSection";
+import { RefundPolicySection } from "@/components/sections/RefundPolicySection";
 import { BUSINESS } from "@/lib/business";
 import { buildLocalBusinessSchema, buildWebSiteSchema, buildOrganizationSchema } from "@/lib/schema";
 
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS.name}`,
   },
   description:
-    "Professional mobile car detailing in Manchester & Urmston. Ceramic coating, paint correction, machine polishing & interior detailing — we come to your door. 5★ rated. From £40. Call 07482 225323.",
+    "Professional mobile car detailing in Manchester & Urmston. Ceramic coating, paint correction, machine polishing & interior detailing — we come to your door. 5★ rated. From £55. Call 07482 225323.",
   keywords: [
     "car wash urmston",
     "car valet urmston",
@@ -155,6 +156,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <GMBMapSection />
+        <RefundPolicySection />
         <Footer />
         <MobileCTABar />
         <WhatsAppButton />

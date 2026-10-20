@@ -58,7 +58,7 @@ const AREA_META: Record<string, { title: string; description: string }> = {
   manchester: {
     title: "Car Detailing Manchester | Mobile Ceramic Coating & Paint Correction | Latin King Detailing",
     description:
-      "Professional mobile car detailing across Manchester — ceramic coating, paint correction, machine polishing & interior detailing at your door. 5★ rated. From £40. Call 07482 225323.",
+      "Professional mobile car detailing across Manchester — ceramic coating, paint correction, machine polishing & interior detailing at your door. 5★ rated. From £55. Call 07482 225323.",
   },
   "old-trafford": {
     title: "Car Detailing Old Trafford | Mobile Car Valet M16 M17 | Latin King Detailing",
@@ -223,7 +223,7 @@ export default async function AreaPage({ params }: PageProps) {
               },
               {
                 q: `How much does a car valet in ${area.name} cost?`,
-                a: `A mobile valet in ${area.name} starts from £40 for a mini valet. Full valets and detailing packages start from £80–£120+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
+                a: `A mobile valet in ${area.name} starts from £55 for a mini valet. Full valets and detailing packages start from £80–£120+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
               },
               {
                 q: `What areas near ${area.name} do you also cover?`,

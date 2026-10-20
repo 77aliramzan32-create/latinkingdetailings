@@ -104,7 +104,7 @@ export default function MobileVsCarWashPost() {
               ["Swirl removal", "Not possible", "Machine polishing available"],
               ["Convenience", "Drive-in (travel required)", "We come to you"],
               ["Time on site", "3–5 minutes", "2–8+ hours (thorough)"],
-              ["Cost", "£5–£15", "From £40 (mini valet)"],
+              ["Cost", "£5–£15", "From £55 (mini valet)"],
             ].map(([factor, auto, mobile]) => (
               <div key={factor} className="grid grid-cols-3 p-4 text-sm border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <span className="font-semibold text-white">{factor}</span>
@@ -189,7 +189,7 @@ export default function MobileVsCarWashPost() {
       <CTASection
         eyebrow="Try the real thing"
         title="Book a mobile detail in Manchester"
-        description="Professional mobile car detailing at your door across Urmston, Trafford and Greater Manchester. Starting from £40."
+        description="Professional mobile car detailing at your door across Urmston, Trafford and Greater Manchester. Starting from £55."
       />
     </>
   );

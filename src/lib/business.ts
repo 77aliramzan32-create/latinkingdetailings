@@ -92,7 +92,7 @@ export const BUSINESS = {
       tagline: "Professional valeting delivered to your door",
       description:
         "Full interior and exterior mobile valet service — we come to your home, workplace or any convenient location across Greater Manchester. From a thorough mini valet to a complete full valet, every clean is carried out using premium products with meticulous attention to detail.",
-      priceFrom: 40,
+      priceFrom: 55,
       duration: "1.5–3 hours",
       icon: "car",
     },
@@ -114,7 +114,7 @@ export const BUSINESS = {
       tagline: "Remove swirls, scratches & oxidation permanently",
       description:
         "Machine-assisted paint correction eliminates swirl marks, light scratches, water spots and oxidation from the clear coat, restoring genuine gloss and depth. Available as a one-stage enhancement or multi-stage correction depending on paint condition.",
-      priceFrom: 200,
+      priceFrom: 300,
       duration: "6–12 hours",
       icon: "zap",
     },
@@ -136,7 +136,7 @@ export const BUSINESS = {
       tagline: "Lasting protection with a permanent liquid-glass shield",
       description:
         "Professional-grade SiO₂ ceramic coating bonds permanently to your paintwork, creating a hydrophobic, scratch-resistant barrier that keeps the car cleaner for longer and dramatically enhances gloss. Lasts up to 2–3 years with correct maintenance. We have experience coating vehicles from everyday hatchbacks to luxury exotics including the Ferrari Purosangue.",
-      priceFrom: 250,
+      priceFrom: 180,
       duration: "1–2 days",
       icon: "shield",
     },

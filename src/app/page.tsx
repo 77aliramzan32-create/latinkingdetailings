@@ -11,7 +11,7 @@ import { GalleryPreview } from "@/components/sections/GalleryPreview";
 export const metadata: Metadata = {
   title: "Car Detailing Manchester & Urmston | Ceramic Coating, Paint Correction & Mobile Valeting | Latin King Detailing",
   description:
-    "Professional mobile car detailing in Manchester & Urmston — ceramic coating, paint correction, machine polishing, interior detailing & car valeting at your door. 5★ rated. From £40. Call 07482 225323.",
+    "Professional mobile car detailing in Manchester & Urmston — ceramic coating, paint correction, machine polishing, interior detailing & car valeting at your door. 5★ rated. From £55. Call 07482 225323.",
   alternates: { canonical: "/" },
 };
 

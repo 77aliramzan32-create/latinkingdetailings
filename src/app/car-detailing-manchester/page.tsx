@@ -10,12 +10,12 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 export const metadata: Metadata = {
   title: "Car Detailing Manchester | Best Mobile Car Detailing Near Me | Latin King Detailing",
   description:
-    "Professional car detailing in Manchester — fully mobile, we come to you. Ceramic coating, paint correction, interior detailing & car valeting across Greater Manchester. 5★ rated. From £40. Call 07482 225323.",
+    "Professional car detailing in Manchester — fully mobile, we come to you. Ceramic coating, paint correction, interior detailing & car valeting across Greater Manchester. 5★ rated. From £55. Call 07482 225323.",
   alternates: { canonical: "/car-detailing-manchester" },
   openGraph: {
     title: "Car Detailing Manchester | Latin King Detailing",
     description:
-      "Manchester's highest-rated mobile car detailing service. Ceramic coating, paint correction & valeting at your door. 5★ rated. From £40.",
+      "Manchester's highest-rated mobile car detailing service. Ceramic coating, paint correction & valeting at your door. 5★ rated. From £55.",
     type: "website",
     url: `${BUSINESS.url}/car-detailing-manchester`,
   },
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   { name: "Car Detailing", href: "/services/car-detailing", price: 120, duration: "4–8 hrs", description: "Full decontamination, machine polish & paint protection." },
-  { name: "Ceramic Coating", href: "/services/ceramic-coating", price: 350, duration: "1–2 days", description: "Professional SiO₂ coating — lasts 2–3 years. Paint prep included." },
-  { name: "Paint Correction", href: "/services/paint-correction", price: 200, duration: "6–12 hrs", description: "Machine removal of swirl marks, scratches & oxidation." },
-  { name: "Mobile Valeting", href: "/services/mobile-valeting", price: 40, duration: "1.5–3 hrs", description: "Mini valet, full valet — we come to your door." },
+  { name: "Ceramic Coating", href: "/services/ceramic-coating", price: 180, duration: "1–2 days", description: "Professional SiO₂ coating — lasts 2–3 years. Paint prep included." },
+  { name: "Paint Correction", href: "/services/paint-correction", price: 300, duration: "6–12 hrs", description: "Machine removal of swirl marks, scratches & oxidation." },
+  { name: "Mobile Valeting", href: "/services/mobile-valeting", price: 55, duration: "1.5–3 hrs", description: "Mini valet, full valet — we come to your door." },
   { name: "Interior Detailing", href: "/services/interior-detailing", price: 80, duration: "2–4 hrs", description: "Steam clean, hot water extraction, odour elimination." },
   { name: "Machine Polishing / Paint Enhancement", href: "/services/machine-polishing", price: 200, duration: "4–8 hrs", description: "Restore gloss and clarity to any paint type." },
 { name: "Engine Bay Cleaning", href: "/services/engine-bay-cleaning", price: 50, duration: "45–90 min", description: "Safe steam & degreaser engine clean at your location." },
@@ -55,7 +55,7 @@ const FAQS = [
   {
     question: "How much does car detailing cost in Manchester?",
     answer:
-      "Car detailing in Manchester starts from £40 for a mobile mini valet. A full car detail costs from £120. Paint correction starts from £200. Professional ceramic coating starts from £250. All prices are confirmed as a fixed quote before any work begins — no hidden charges.",
+      "Car detailing in Manchester starts from £55 for a mobile mini valet. A full car detail costs from £120. Paint correction starts from £300. Professional ceramic coating starts from £180. All prices are confirmed as a fixed quote before any work begins — no hidden charges.",
   },
   {
     question: "Do you offer mobile car detailing in Manchester?",
@@ -124,7 +124,7 @@ export default function CarDetailingManchesterPage() {
     areaServed: { "@type": "City", name: "Manchester" },
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: 40,
+      lowPrice: 55,
       highPrice: 1500,
       priceCurrency: "GBP",
       availability: "https://schema.org/InStock",
