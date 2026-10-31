@@ -192,6 +192,8 @@ export const BUSINESS = {
       slug: "urmston",
       name: "Urmston",
       postcodes: ["M41"],
+      nearby: ["flixton", "davyhulme", "stretford", "sale", "partington"],
+      neighbourhoods: ["Urmston town centre", "Flixton Road", "Stretford Road"],
       isHQ: true,
       description:
         "Our home base and primary service area. Latin King Detailing is the leading mobile car wash, car valet and detailing service in Urmston — a professional hand car wash alternative that comes to your door. We offer same-day and next-day slots across M41 postcodes including Urmston town centre, Flixton Road, Stretford Road and all surrounding residential streets.",
@@ -200,6 +202,8 @@ export const BUSINESS = {
       slug: "flixton",
       name: "Flixton",
       postcodes: ["M41"],
+      nearby: ["urmston", "davyhulme", "irlam", "partington", "carrington"],
+      neighbourhoods: ["Flixton Road", "Flixton village"],
       description:
         "Adjacent to our base on Flixton Road, we serve Flixton regularly with rapid response times. Popular with local residents looking for a convenient mobile valet without leaving home.",
     },
@@ -207,6 +211,8 @@ export const BUSINESS = {
       slug: "stretford",
       name: "Stretford",
       postcodes: ["M32"],
+      nearby: ["urmston", "old-trafford", "chorlton-cum-hardy", "sale", "manchester"],
+      neighbourhoods: ["Stretford town centre", "Edge Lane", "Chester Road"],
       description:
         "Stretford is one of our most active service areas — a short drive from our Urmston base along the A56. We offer mobile car valet, full car detailing, ceramic coating and paint correction across all of M32, including Stretford town centre, Edge Lane and the residential streets off Chester Road.",
     },
@@ -214,6 +220,8 @@ export const BUSINESS = {
       slug: "davyhulme",
       name: "Davyhulme",
       postcodes: ["M41"],
+      nearby: ["urmston", "flixton", "stretford", "eccles", "irlam"],
+      neighbourhoods: ["Lostock Road", "Princess Road"],
       description:
         "Davyhulme sits directly adjacent to Urmston and benefits from the same rapid availability. We serve homes and businesses throughout Davyhulme, including Lostock Road and the estates off Princess Road.",
     },
@@ -221,6 +229,8 @@ export const BUSINESS = {
       slug: "sale",
       name: "Sale",
       postcodes: ["M33"],
+      nearby: ["stretford", "altrincham", "timperley", "chorlton-cum-hardy", "urmston"],
+      neighbourhoods: ["Sale town centre", "Sale Moor", "Ashton upon Mersey"],
       description:
         "Sale is a key coverage area for us in Trafford. Whether you're based near Sale town centre, Sale Moor or Ashton upon Mersey, we'll bring the full mobile detailing service to your door.",
     },
@@ -228,6 +238,8 @@ export const BUSINESS = {
       slug: "old-trafford",
       name: "Old Trafford",
       postcodes: ["M16", "M17"],
+      nearby: ["stretford", "manchester", "chorlton-cum-hardy", "salford"],
+      neighbourhoods: ["Old Trafford stadium precinct", "White City retail park"],
       description:
         "From the stadium precincts to the residential streets behind White City retail park, we cover Old Trafford and the M16/M17 postcode area with our full range of valeting and detailing services.",
     },
@@ -235,6 +247,8 @@ export const BUSINESS = {
       slug: "chorlton-cum-hardy",
       name: "Chorlton-cum-Hardy",
       postcodes: ["M21"],
+      nearby: ["stretford", "didsbury", "manchester", "sale", "old-trafford"],
+      neighbourhoods: ["Barlow Moor Road", "Wilbraham Road"],
       description:
         "Chorlton is one of Manchester's most popular suburban neighbourhoods and we're proud to serve it. Residents across M21 — from Barlow Moor Road to Wilbraham Road — can book our mobile detailing service for any driveway or on-street location.",
     },
@@ -242,6 +256,8 @@ export const BUSINESS = {
       slug: "eccles",
       name: "Eccles",
       postcodes: ["M30"],
+      nearby: ["salford", "davyhulme", "irlam", "manchester"],
+      neighbourhoods: ["Eccles town centre"],
       description:
         "Eccles and its surrounding streets in M30 are well within our service radius. We regularly carry out full details, ceramic coatings and mobile valets for customers across the Eccles area.",
     },
@@ -249,6 +265,8 @@ export const BUSINESS = {
       slug: "salford",
       name: "Salford",
       postcodes: ["M27", "M6", "M7"],
+      nearby: ["eccles", "manchester", "stretford", "old-trafford"],
+      neighbourhoods: ["Salford Quays", "MediaCityUK", "Pendleton", "Swinton"],
       description:
         "From Salford Quays to Pendleton and Swinton, we cover the wider Salford area including M5, M6, M27 and M7 postcodes. Our mobile setup means no need for you to travel to a car wash — we come to you.",
     },
@@ -256,6 +274,8 @@ export const BUSINESS = {
       slug: "altrincham",
       name: "Altrincham",
       postcodes: ["WA14", "WA15"],
+      nearby: ["sale", "timperley", "carrington", "partington"],
+      neighbourhoods: ["Altrincham town centre", "Timperley", "Bowdon", "Hale"],
       description:
         "Altrincham and the WA14/WA15 area is the southern extent of our service zone. We serve Altrincham town centre, Timperley, Bowdon and Hale with the full menu of detailing and protective coating services.",
     },
@@ -263,6 +283,8 @@ export const BUSINESS = {
       slug: "carrington",
       name: "Carrington",
       postcodes: ["M31"],
+      nearby: ["partington", "altrincham", "sale", "flixton"],
+      neighbourhoods: ["Carrington village"],
       description:
         "Carrington residents and businesses in M31 can book our mobile detailing service for any location. We cover Carrington village and the surrounding industrial and residential areas.",
     },
@@ -270,6 +292,8 @@ export const BUSINESS = {
       slug: "partington",
       name: "Partington",
       postcodes: ["M31"],
+      nearby: ["carrington", "altrincham", "flixton", "irlam"],
+      neighbourhoods: ["Partington town centre"],
       description:
         "Partington is well within our coverage area. Customers in M31 can book a full mobile valet, paint correction or ceramic coating at their property without any travel required.",
     },
@@ -277,6 +301,8 @@ export const BUSINESS = {
       slug: "irlam",
       name: "Irlam",
       postcodes: ["M44"],
+      nearby: ["eccles", "flixton", "partington", "carrington"],
+      neighbourhoods: ["Irlam", "Cadishead"],
       description:
         "Irlam and Cadishead in M44 are covered by our mobile detailing team. We serve residential streets and commercial premises across the Irlam area, offering the full range of valeting and detailing services.",
     },
@@ -284,6 +310,8 @@ export const BUSINESS = {
       slug: "timperley",
       name: "Timperley",
       postcodes: ["WA15"],
+      nearby: ["altrincham", "sale", "didsbury"],
+      neighbourhoods: ["Park Road", "Bloomsbury Lane"],
       description:
         "Timperley is a popular booking location for us, with many customers in WA15 choosing our mobile ceramic coating and full detail packages. We cover all of Timperley including Park Road, Bloomsbury Lane and adjacent streets.",
     },
@@ -291,6 +319,8 @@ export const BUSINESS = {
       slug: "didsbury",
       name: "Didsbury",
       postcodes: ["M20"],
+      nearby: ["chorlton-cum-hardy", "timperley", "manchester", "sale"],
+      neighbourhoods: ["West Didsbury", "East Didsbury", "Withington"],
       description:
         "Didsbury's mix of high-value vehicles and discerning owners makes it a natural fit for our premium detailing service. We serve West Didsbury, East Didsbury and Withington across M20 postcodes.",
     },
@@ -298,6 +328,8 @@ export const BUSINESS = {
       slug: "manchester",
       name: "Manchester",
       postcodes: ["M1", "M2", "M3", "M4", "M8", "M13", "M14", "M15", "M16"],
+      nearby: ["salford", "stretford", "chorlton-cum-hardy", "didsbury", "old-trafford", "eccles"],
+      neighbourhoods: ["City centre", "Deansgate", "Northern Quarter", "Castlefield"],
       description:
         "Latin King Detailing serves Manchester city and the wider Greater Manchester area with fully mobile car detailing, ceramic coating, paint correction and valeting. From our Urmston base we cover all key Manchester postcodes — providing the same premium detailing standard at your door across the city.",
     },
@@ -311,6 +343,8 @@ export type Area = {
   postcodes: readonly string[];
   isHQ?: boolean;
   description: string;
+  nearby?: readonly string[];
+  neighbourhoods?: readonly string[];
 };
 
 // Utility: get a service by slug

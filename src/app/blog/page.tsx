@@ -12,6 +12,132 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "ceramic-coating-vs-ppf",
+    title: "Ceramic Coating vs PPF: Which Protection Is Right for Your Car?",
+    excerpt:
+      "PPF stops stone chips. Ceramic coating adds gloss and makes washing easier. The honest comparison — what each one does, how long it lasts, what it costs in the UK, and which suits your car.",
+    readTime: "6 min read",
+    category: "Comparison",
+    date: "2026-10-31",
+  },
+  {
+    slug: "ferrari-ceramic-coating-manchester",
+    title: "Ferrari Ceramic Coating in Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF and paint correction for Ferrari in Manchester — from a detailer who has worked on a Ferrari 12Cilindri in Urmston and a Purosangue.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "lamborghini-ceramic-coating-manchester",
+    title: "Lamborghini Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Lamborghini in Manchester — Huracán, Urus and Revuelto, at your door. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "porsche-ceramic-coating-manchester",
+    title: "Porsche Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice and detailing for Porsche in Manchester — 911, Taycan, Cayenne and Panamera. We have detailed a Taycan in Urmston. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "mercedes-amg-ceramic-coating-manchester",
+    title: "Mercedes-AMG Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice and detailing for Mercedes-AMG in Manchester — including matte paint. We have detailed a Brabus GT 63 S in matte black. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "bmw-m-ceramic-coating-manchester",
+    title: "BMW M Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice and detailing for BMW M in Manchester — M3, M4, M5 and i7. We have detailed a 1M Coupé and a BMW i7. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "audi-sport-ceramic-coating-manchester",
+    title: "Audi Sport Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice and detailing for Audi Sport in Manchester — RS6, RSQ8, RS5 and R8. We have ceramic coated a TT RS in Sepang Blue. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "bentley-ceramic-coating-manchester",
+    title: "Bentley Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Bentley in Manchester — Continental GT, Bentayga and Flying Spur. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "rolls-royce-ceramic-coating-manchester",
+    title: "Rolls-Royce Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Rolls-Royce in Manchester — Phantom, Ghost, Cullinan and Spectre. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "aston-martin-ceramic-coating-manchester",
+    title: "Aston Martin Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Aston Martin in Manchester — DB12, Vantage and DBX. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "mclaren-ceramic-coating-manchester",
+    title: "McLaren Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for McLaren in Manchester — 720S, Artura and GT. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "maserati-ceramic-coating-manchester",
+    title: "Maserati Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Maserati in Manchester — MC20, GranTurismo and Grecale. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "range-rover-ceramic-coating-manchester",
+    title: "Range Rover Ceramic Coating Manchester | PPF",
+    excerpt:
+      "Ceramic coating, PPF advice and detailing for Range Rover in Manchester — Range Rover, Sport, Velar and Defender. We have detailed Land Rovers. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "tesla-ceramic-coating-manchester",
+    title: "Tesla Ceramic Coating Manchester | PPF & Detailing",
+    excerpt:
+      "Ceramic coating, PPF advice, paint correction and detailing for Tesla in Manchester — Model 3, Model Y, Model S and Model X. From £180.",
+    readTime: "6 min read",
+    category: "Prestige & Supercar Guide",
+    date: "2026-10-31",
+  },
+  {
     slug: "ceramic-coating-vs-wax",
     title: "Ceramic Coating vs Wax: Which Paint Protection is Right for Your Car?",
     excerpt:

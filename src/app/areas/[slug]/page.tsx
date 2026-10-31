@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
 import { BUSINESS, getArea } from "@/lib/business";
-import { buildLocalBusinessSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema } from "@/lib/schema";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTASection } from "@/components/sections/CTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -50,7 +50,7 @@ const AREA_META: Record<string, { title: string; description: string }> = {
     description:
       "Mobile car valet & detailing in Flixton (M41). Professional car cleaning & ceramic coating at your door — rapid response from our Urmston base. 5★ rated. Call 07482 225323.",
   },
-  chorlton: {
+  "chorlton-cum-hardy": {
     title: "Car Detailing Chorlton Manchester | Mobile Car Valet M21",
     description:
       "Mobile car detailing & valeting in Chorlton-cum-Hardy (M21). Car cleaning, ceramic coating & paint correction at your door in Chorlton. 5★ rated. Book now.",
@@ -92,6 +92,41 @@ const AREA_META: Record<string, { title: string; description: string }> = {
   },
 };
 
+// Service+location landing pages that exist for each area — linked from the
+// area page so every location entity connects to its service pages.
+const GEO_PAGES: Record<string, { href: string; label: string }[]> = {
+  manchester: [
+    { href: "/car-detailing-manchester", label: "Car Detailing Manchester" },
+    { href: "/ceramic-coating-manchester", label: "Ceramic Coating Manchester" },
+    { href: "/mobile-detailing-manchester", label: "Mobile Detailing Manchester" },
+    { href: "/car-valeting-manchester", label: "Car Valeting Manchester" },
+    { href: "/paint-correction-manchester", label: "Paint Correction Manchester" },
+    { href: "/interior-detailing-manchester", label: "Interior Detailing Manchester" },
+  ],
+  urmston: [
+    { href: "/car-detailing-urmston", label: "Car Detailing Urmston" },
+    { href: "/ceramic-coating-urmston", label: "Ceramic Coating Urmston" },
+    { href: "/car-valeting-urmston", label: "Car Valeting Urmston" },
+    { href: "/car-detailing-trafford", label: "Car Detailing Trafford" },
+  ],
+  salford: [{ href: "/car-detailing-salford", label: "Car Detailing Salford" }],
+  sale: [
+    { href: "/car-detailing-sale", label: "Car Detailing Sale" },
+    { href: "/car-detailing-trafford", label: "Car Detailing Trafford" },
+  ],
+  stretford: [
+    { href: "/car-detailing-stretford", label: "Car Detailing Stretford" },
+    { href: "/car-detailing-trafford", label: "Car Detailing Trafford" },
+  ],
+  altrincham: [
+    { href: "/car-detailing-altrincham", label: "Car Detailing Altrincham" },
+    { href: "/car-detailing-trafford", label: "Car Detailing Trafford" },
+  ],
+  didsbury: [{ href: "/car-detailing-didsbury", label: "Car Detailing Didsbury" }],
+  partington: [{ href: "/car-detailing-trafford", label: "Car Detailing Trafford" }],
+  timperley: [{ href: "/car-detailing-trafford", label: "Car Detailing Trafford" }],
+};
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -117,22 +152,39 @@ export default async function AreaPage({ params }: PageProps) {
   const area = getArea(slug);
   if (!area) notFound();
 
+  // Geographically adjacent areas (from the area's own entity data)
+  const nearbyAreas = (area.nearby ?? [])
+    .map((s) => getArea(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
+  const geoPages = GEO_PAGES[slug] ?? [];
+
   const schema = buildLocalBusinessSchema();
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", url: BUSINESS.url },
     { name: "Areas", url: `${BUSINESS.url}/areas` },
     { name: area.name, url: `${BUSINESS.url}/areas/${slug}` },
   ]);
-
-  // Nearby areas (exclude current)
-  const nearbyAreas = BUSINESS.areas
-    .filter((a) => a.slug !== slug)
-    .slice(0, 6);
+  const faqs = [
+    {
+      question: `Do you offer mobile car valeting in ${area.name}?`,
+      answer: `Yes. Latin King Detailing provides fully mobile car valeting and detailing services in ${area.name} (${area.postcodes.join(", ")}). We come to your home, workplace or any convenient outdoor location — no need to travel.`,
+    },
+    {
+      question: `How much does a car valet in ${area.name} cost?`,
+      answer: `A full valet in ${area.name} starts from £80. Detailing packages start from £180+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
+    },
+    {
+      question: `What areas near ${area.name} do you also cover?`,
+      answer: `As well as ${area.name}, Latin King Detailing covers ${nearbyAreas.slice(0, 4).map((a) => a.name).join(", ")} and all surrounding Greater Manchester postcodes. Message us with your postcode to confirm availability.`,
+    },
+  ];
+  const faqSchema = buildFAQSchema(faqs);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section className="section-pad pt-32 md:pt-40" style={{ background: "var(--color-base-950)" }}>
@@ -216,32 +268,73 @@ export default async function AreaPage({ params }: PageProps) {
             Car detailing in {area.name} — common questions
           </h2>
           <div className="space-y-5">
-            {[
-              {
-                q: `Do you offer mobile car valeting in ${area.name}?`,
-                a: `Yes. Latin King Detailing provides fully mobile car valeting and detailing services in ${area.name} (${area.postcodes.join(", ")}). We come to your home, workplace or any convenient outdoor location — no need to travel.`,
-              },
-              {
-                q: `How much does a car valet in ${area.name} cost?`,
-                a: `A full valet in ${area.name} starts from £80. Detailing packages start from £180+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
-              },
-              {
-                q: `What areas near ${area.name} do you also cover?`,
-                a: `As well as ${area.name}, Latin King Detailing covers ${nearbyAreas.slice(0, 4).map((a) => a.name).join(", ")} and all surrounding Greater Manchester postcodes. Message us with your postcode to confirm availability.`,
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="card p-6">
                 <h3 className="text-lg font-bold mb-3" style={{ fontFamily: "var(--font-barlow-condensed)", fontWeight: 800, fontSize: "1.05rem" }}>
-                  {faq.q}
+                  {faq.question}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>
-                  {faq.a}
+                  {faq.answer}
                 </p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Neighbourhoods & streets covered in this area */}
+      {area.neighbourhoods && area.neighbourhoods.length > 0 && (
+        <section className="section-pad" style={{ background: "var(--color-base-900)" }}>
+          <div className="section-container">
+            <h2 className="text-2xl mb-3">Neighbourhoods &amp; streets we cover in {area.name}</h2>
+            <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.55)", maxWidth: "60ch" }}>
+              Our mobile unit works across {area.name} ({area.postcodes.join(", ")}) — book from any of these neighbourhoods and we come to you.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {area.neighbourhoods.map((n) => (
+                <span
+                  key={n}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium"
+                  style={{
+                    background: "var(--color-base-800)",
+                    border: "1px solid var(--color-border)",
+                    color: "rgba(255,255,255,0.7)",
+                  }}
+                >
+                  <MapPin size={12} style={{ color: "var(--color-accent-500)" }} />
+                  {n}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Service pages for this location */}
+      {geoPages.length > 0 && (
+        <section className="section-pad">
+          <div className="section-container">
+            <h2 className="text-2xl mb-6">Car detailing services in {area.name}</h2>
+            <div className="flex flex-wrap gap-3">
+              {geoPages.map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all"
+                  style={{
+                    background: "var(--color-base-900)",
+                    border: "1px solid var(--color-border)",
+                    color: "rgba(255,255,255,0.7)",
+                  }}
+                >
+                  {g.label}
+                  <ArrowRight size={12} style={{ color: "var(--color-accent-500)" }} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Nearby areas */}
       <section className="section-pad">
