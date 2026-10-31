@@ -6,9 +6,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Areas We Cover — Mobile Car Detailing Across Greater Manchester",
-  description:
-    "Latin King Detailing covers Urmston, Stretford, Sale, Altrincham, Chorlton, Salford, Eccles and 10+ more locations across Greater Manchester. We come to you.",
+  title: "Areas We Cover | Car Detailing Greater Manchester",
+  description: "Latin King Detailing covers Urmston, Stretford, Sale, Altrincham, Chorlton, Salford, Eccles & 10+ more locations across Greater Manchester.",
   alternates: { canonical: "/areas" },
 };
 

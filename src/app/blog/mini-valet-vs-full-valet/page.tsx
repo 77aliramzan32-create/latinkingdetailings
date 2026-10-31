@@ -37,7 +37,7 @@ const FAQS = [
   {
     question: "How much does a mini valet cost near Manchester?",
     answer:
-      "A mobile mini valet in Manchester starts from £55 at Latin King Detailing. This is a fully mobile service — we come to your home or workplace with our own water, power and products.",
+      "Latin King Detailing no longer offers mini valets. Our entry-level valet is now the full valet, which starts from £80 in Manchester. This is a fully mobile service — we come to your home or workplace with our own water, power and products.",
   },
   {
     question: "How long does a mini valet take?",
@@ -120,9 +120,14 @@ export default function MiniValetVsFullValetPage() {
             </div>
 
             <h1 className="mb-5">Mini Valet vs Full Valet: What&apos;s the Difference?</h1>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.68)", maxWidth: "58ch" }}>
+            <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.68)", maxWidth: "58ch" }}>
               A straightforward guide to what each service includes, how long it takes, and which one your car actually needs.
             </p>
+            <div className="card p-5 mb-8" style={{ background: "var(--color-base-800)", borderLeft: "4px solid var(--color-accent-500)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                <strong className="text-white">Update (31 October 2026):</strong> Latin King Detailing no longer offers mini valets — our entry-level valet is now the full valet, from £80. This guide still explains the difference between the two, so you can compare what each one covers.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -134,7 +139,7 @@ export default function MiniValetVsFullValetPage() {
                 <h2 className="mb-4">The quick summary</h2>
                 <div className="grid sm:grid-cols-2 gap-5">
                   {[
-                    { name: "Mini Valet", price: "From £55", time: "1.5–2 hours", best: "Regular maintenance clean" },
+                    { name: "Mini Valet", price: "No longer offered", time: "1.5–2 hours", best: "Replaced by the full valet from £80" },
                     { name: "Full Valet", price: "From £80", time: "2.5–3.5 hours", best: "Thorough reset or first valet in a while" },
                   ].map((v) => (
                     <div key={v.name} className="card p-6" style={{ background: "var(--color-base-800)" }}>
@@ -196,7 +201,7 @@ export default function MiniValetVsFullValetPage() {
                   {[
                     {
                       condition: "Your car is regularly cleaned and maintained",
-                      recommendation: "Mini valet — keeps it fresh without a full reset.",
+                      recommendation: "Full valet — a complete clean that keeps it fresh without a full detail.",
                     },
                     {
                       condition: "It hasn't been professionally cleaned for 3+ months",
@@ -273,8 +278,8 @@ export default function MiniValetVsFullValetPage() {
 
       <CTASection
         eyebrow="Mobile Valeting — Greater Manchester"
-        title="Book a Mini Valet or Full Valet Today"
-        description="We come to your door across Greater Manchester — fully equipped with own water, power and professional products. Fixed quote before we start. From £55."
+        title="Book a Full Valet Today"
+        description="We come to your door across Greater Manchester — fully equipped with own water, power and professional products. Fixed quote before we start. From £80."
         primaryCTA="Book My Valet"
       />
     </>

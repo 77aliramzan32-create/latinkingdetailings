@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Star, Shield, MapPin, Award } from "lucide-react";
+import Link from "next/link";
 import { BUSINESS } from "@/lib/business";
 import { StarRating } from "@/components/ui/StarRating";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Latin King Detailing — Urmston Mobile Car Detailing",
-  description:
-    "Latin King Detailing is a premium mobile car detailing business based in Urmston, Manchester. We're passionate about paint and dedicated to showroom-quality results at your door.",
+  title: "About Latin King Detailing | Urmston, Manchester",
+  description: "Latin King Detailing is a premium mobile car detailing business based in Urmston, Manchester. Passionate about paint, dedicated to showroom results.",
   alternates: { canonical: "/about" },
 };
 
@@ -39,6 +39,18 @@ export default function AboutPage() {
                   The 5-star rating across Google and Facebook isn&apos;t a target we aim for — it&apos;s a natural outcome of doing things properly, treating customers well and standing behind our work.
                 </p>
               </div>
+                <div className="flex flex-wrap gap-3 mt-6">
+                  <Link href="/services" className="text-sm font-semibold underline" style={{ color: "var(--color-accent-500)" }}>Our services</Link>
+                  <Link href="/pricing" className="text-sm font-semibold underline" style={{ color: "var(--color-accent-500)" }}>See prices</Link>
+                  <Link href="/areas" className="text-sm font-semibold underline" style={{ color: "var(--color-accent-500)" }}>Areas we cover</Link>
+                  <Link href="/reviews" className="text-sm font-semibold underline" style={{ color: "var(--color-accent-500)" }}>Customer reviews</Link>
+                </div>
+                <p className="text-sm mt-4" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  Follow our work on{" "}
+                  <a href={BUSINESS.social.instagram} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--color-accent-500)" }}>Instagram</a>,{" "}
+                  <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--color-accent-500)" }}>Facebook</a> and{" "}
+                  <a href={BUSINESS.social.tiktok} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--color-accent-500)" }}>TikTok</a>.
+                </p>
             </div>
 
             {/* Trust signals */}
@@ -90,7 +102,7 @@ export default function AboutPage() {
                   <p className="text-xl font-bold" style={{ fontFamily: "var(--font-barlow-condensed)", fontWeight: 800 }}>Based in Urmston, M41</p>
                 </div>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  {BUSINESS.address.full}. Serving {BUSINESS.areas.length} locations across Greater Manchester.
+                  {BUSINESS.address.full}. <Link href="/areas" className="underline" style={{ color: "var(--color-accent-500)" }}>Serving {BUSINESS.areas.length} locations across Greater Manchester</Link>.
                 </p>
               </div>
             </div>

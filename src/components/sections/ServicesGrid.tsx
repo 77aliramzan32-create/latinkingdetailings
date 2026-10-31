@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   Car,
   Sparkles,
@@ -16,6 +13,10 @@ import {
 } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+
+// Server component: scroll reveals are the tiny Reveal wrapper —
+// no framer-motion, so this section needs no hydration of its own.
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   car: <Car size={22} />,
@@ -52,13 +53,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
 
         <div className="grid-auto-fill-300">
           {services.map((service, i) => (
-            <motion.div
-              key={service.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
-            >
+            <Reveal key={service.slug} y={20} delay={(i % 3) * 0.08}>
               <Link
                 href={`/services/${service.slug}`}
                 className="group card gloss-sheen flex flex-col h-full p-6 transition-all duration-200 hover:border-white/[0.18]"
@@ -94,7 +89,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 

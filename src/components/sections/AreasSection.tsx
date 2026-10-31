@@ -1,10 +1,11 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+
+// Server component: scroll reveals are the tiny Reveal wrapper —
+// no framer-motion, so this section needs no hydration of its own.
 
 export function AreasSection() {
   return (
@@ -19,13 +20,7 @@ export function AreasSection() {
 
         <div className="grid-auto-fill-240 mb-10">
           {BUSINESS.areas.map((area, i) => (
-            <motion.div
-              key={area.slug}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.35, delay: (i % 4) * 0.07 }}
-            >
+            <Reveal key={area.slug} y={12} delay={(i % 4) * 0.07} margin="-30px">
               <Link
                 href={`/areas/${area.slug}`}
                 className="group flex items-center gap-3 p-4 rounded-lg border transition-all duration-200 hover:border-accent-700"
@@ -51,7 +46,7 @@ export function AreasSection() {
                   )}
                 </span>
               </Link>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
@@ -62,7 +57,7 @@ export function AreasSection() {
               Our service radius extends across all of Greater Manchester and parts of Cheshire. Message us with your postcode to confirm availability.
             </p>
           </div>
-          <Link href="/contact" className="btn btn-primary flex-shrink-0">
+          <Link href="/contact" prefetch={false} className="btn btn-primary flex-shrink-0">
             Check My Area
           </Link>
         </div>

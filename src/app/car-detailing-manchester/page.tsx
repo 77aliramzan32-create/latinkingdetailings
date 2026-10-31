@@ -8,24 +8,23 @@ import { CTASection } from "@/components/sections/CTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 export const metadata: Metadata = {
-  title: "Car Detailing Manchester | Best Mobile Car Detailing Near Me | Latin King Detailing",
-  description:
-    "Professional car detailing in Manchester — fully mobile, we come to you. Ceramic coating, paint correction, interior detailing & car valeting across Greater Manchester. 5★ rated. From £55. Call 07482 225323.",
+  title: "Car Detailing Manchester | Mobile Detailing Near Me",
+  description: "Professional car detailing in Manchester — fully mobile, we come to you. Ceramic coating, paint correction & valeting. 5★ rated. From £80.",
   alternates: { canonical: "/car-detailing-manchester" },
   openGraph: {
     title: "Car Detailing Manchester | Latin King Detailing",
     description:
-      "Manchester's highest-rated mobile car detailing service. Ceramic coating, paint correction & valeting at your door. 5★ rated. From £55.",
+      "Manchester's highest-rated mobile car detailing service. Ceramic coating, paint correction & valeting at your door. 5★ rated. From £80.",
     type: "website",
     url: `${BUSINESS.url}/car-detailing-manchester`,
   },
 };
 
 const SERVICES = [
-  { name: "Car Detailing", href: "/services/car-detailing", price: 120, duration: "4–8 hrs", description: "Full decontamination, machine polish & paint protection." },
+  { name: "Car Detailing", href: "/services/car-detailing", price: 180, duration: "4–8 hrs", description: "Full decontamination, machine polish & paint protection." },
   { name: "Ceramic Coating", href: "/services/ceramic-coating", price: 180, duration: "1–2 days", description: "Professional SiO₂ coating — lasts 2–3 years. Paint prep included." },
   { name: "Paint Correction", href: "/services/paint-correction", price: 300, duration: "6–12 hrs", description: "Machine removal of swirl marks, scratches & oxidation." },
-  { name: "Mobile Valeting", href: "/services/mobile-valeting", price: 55, duration: "1.5–3 hrs", description: "Mini valet, full valet — we come to your door." },
+  { name: "Mobile Valeting", href: "/services/mobile-valeting", price: 80, duration: "2.5–3.5 hrs", description: "Full valet — we come to your door." },
   { name: "Interior Detailing", href: "/services/interior-detailing", price: 80, duration: "2–4 hrs", description: "Steam clean, hot water extraction, odour elimination." },
   { name: "Machine Polishing / Paint Enhancement", href: "/services/machine-polishing", price: 200, duration: "4–8 hrs", description: "Restore gloss and clarity to any paint type." },
 { name: "Engine Bay Cleaning", href: "/services/engine-bay-cleaning", price: 50, duration: "45–90 min", description: "Safe steam & degreaser engine clean at your location." },
@@ -55,7 +54,7 @@ const FAQS = [
   {
     question: "How much does car detailing cost in Manchester?",
     answer:
-      "Car detailing in Manchester starts from £55 for a mobile mini valet. A full car detail costs from £120. Paint correction starts from £300. Professional ceramic coating starts from £180. All prices are confirmed as a fixed quote before any work begins — no hidden charges.",
+      "Car detailing in Manchester starts from £80 for a mobile full valet. A full car detail costs from £180. Paint correction starts from £300. Professional ceramic coating starts from £180. All prices are confirmed as a fixed quote before any work begins — no hidden charges.",
   },
   {
     question: "Do you offer mobile car detailing in Manchester?",
@@ -75,7 +74,7 @@ const FAQS = [
   {
     question: "How long does car detailing take in Manchester?",
     answer:
-      "A mobile mini valet takes 1.5–2 hours. A full car detail takes 4–8 hours. Paint correction takes 6–12 hours. Ceramic coating is a 1–2 day process including paint preparation. We confirm the exact duration when providing your quote.",
+      "A mobile full valet takes 2.5–3.5 hours. A full car detail takes 4–8 hours. Paint correction takes 6–12 hours. Ceramic coating is a 1–2 day process including paint preparation. We confirm the exact duration when providing your quote.",
   },
   {
     question: "What is the difference between a car wash and car detailing?",
@@ -204,7 +203,7 @@ export default function CarDetailingManchesterPage() {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact" prefetch={false} className="btn btn-primary">
                   Get a Free Quote
                 </Link>
                 <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">
@@ -213,7 +212,7 @@ export default function CarDetailingManchesterPage() {
                 </a>
               </div>
               <p className="mt-3 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-                No payment required — exact price confirmed before any work starts.
+                No payment needed when you book — a £50 deposit secures bookings over £100. Exact price confirmed before any work starts.
               </p>
             </div>
 
@@ -505,7 +504,7 @@ export default function CarDetailingManchesterPage() {
           </div>
           <p className="mt-5 text-sm" style={{ color: "rgba(255,255,255,0.42)" }}>
             Don&apos;t see your area?{" "}
-            <Link href="/contact" className="underline" style={{ color: "var(--color-accent-500)" }}>
+            <Link href="/contact" prefetch={false} className="underline" style={{ color: "var(--color-accent-500)" }}>
               Get in touch
             </Link>{" "}
             — we cover a wide radius from our Urmston base.

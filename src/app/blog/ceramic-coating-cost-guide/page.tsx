@@ -283,6 +283,9 @@ export default function CeramicCoatingCostGuidePage() {
                     View Our Pricing
                     <ArrowRight size={13} />
                   </Link>
+                  <a href="https://en.wikipedia.org/wiki/Car_detailing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm" style={{ color: "var(--color-accent-500)" }}>
+                    Car detailing explained — Wikipedia <ArrowRight size={13} />
+                  </a>
                 </div>
               </div>
             </div>

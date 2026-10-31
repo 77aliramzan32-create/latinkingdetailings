@@ -1,9 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
+import { Reveal } from "@/components/ui/Reveal";
+
+// Server component: scroll reveal is the tiny Reveal wrapper —
+// no framer-motion, so this section needs no hydration of its own.
 
 interface CTASectionProps {
   eyebrow?: string;
@@ -14,7 +15,7 @@ interface CTASectionProps {
 }
 
 const DEFAULT_TRUST_POINTS = [
-  "No upfront payment required",
+  "£50 deposit on bookings over £100",
   "We bring all equipment — water, power & products",
   "5★ rated · 50+ verified Google reviews",
   "Open 24/7 — call or message anytime",
@@ -23,7 +24,7 @@ const DEFAULT_TRUST_POINTS = [
 export function CTASection({
   eyebrow = "Free Quote · No Obligation",
   title = "Book Your Detail — We Come to You",
-  description = "Tell us your vehicle, location and the service you're after. We'll confirm your quote before any work starts — no payment required upfront.",
+  description = "Tell us your vehicle, location and the service you're after. We'll confirm your quote before any work starts — no payment needed when you book; a £50 deposit secures bookings over £100.",
   primaryCTA = "Get My Free Quote",
   trustPoints = DEFAULT_TRUST_POINTS,
 }: CTASectionProps) {
@@ -54,13 +55,7 @@ export function CTASection({
       />
 
       <div className="section-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto text-center"
-        >
+        <Reveal y={24} className="max-w-2xl mx-auto text-center">
           <p className="eyebrow justify-center before:content-none after:content-none text-center" style={{ color: "var(--color-accent-400)" }}>
             {eyebrow}
           </p>
@@ -83,7 +78,7 @@ export function CTASection({
           )}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
+            <Link href="/contact" prefetch={false} className="btn btn-primary text-base px-8 py-4">
               <MessageCircle size={18} />
               {primaryCTA}
             </Link>
@@ -96,9 +91,9 @@ export function CTASection({
             </a>
           </div>
           <p className="mt-5 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-            No payment required — we&apos;ll call to confirm your quote before booking is confirmed.
+            No payment needed when you book — we&apos;ll call to confirm your quote and arrange the £50 deposit for bookings over £100.
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

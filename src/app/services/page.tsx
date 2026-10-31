@@ -7,9 +7,8 @@ import { CTASection } from "@/components/sections/CTASection";
 import { buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Car Detailing Services — Mobile Valeting, Ceramic Coating, Paint Correction",
-  description:
-    "Complete range of mobile car detailing services in Urmston and Greater Manchester — valeting, paint correction, ceramic coating, machine polishing, interior and exterior detailing. We come to you.",
+  title: "Car Detailing Services Manchester | Latin King",
+  description: "Mobile car detailing services in Urmston & Greater Manchester — valeting, paint correction, ceramic coating, machine polishing & interior detailing.",
   alternates: { canonical: "/services" },
 };
 

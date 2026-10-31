@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Settings } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { BUSINESS } from "@/lib/business";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
@@ -86,41 +85,38 @@ export function Header() {
                       Services
                       <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
                     </button>
-                    <AnimatePresence>
-                      {servicesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute left-0 top-full pt-2 z-50"
-                          onMouseEnter={() => setServicesOpen(true)}
-                          onMouseLeave={() => setServicesOpen(false)}
-                        >
-                          <div
-                            className="card p-2 grid grid-cols-2 gap-0.5 min-w-[340px]"
-                            style={{ background: "var(--color-base-900)" }}
-                          >
-                            {SERVICE_LINKS.map((s) => (
-                              <Link
-                                key={s.href}
-                                href={s.href}
-                                className="px-3 py-2.5 rounded-md text-sm text-white/70 hover:text-white hover:bg-white/[0.06] transition-colors"
-                              >
-                                {s.label}
-                              </Link>
-                            ))}
-                            <Link
-                              href="/services"
-                              className="col-span-2 px-3 py-2.5 mt-1 rounded-md text-sm font-semibold text-accent-400 hover:bg-accent-950/60 transition-colors border-t border-white/[0.06]"
-                              style={{ color: "var(--color-accent-400)" }}
-                            >
-                              View all services →
-                            </Link>
-                          </div>
-                        </motion.div>
+                    <div
+                      className={cn(
+                        "absolute left-0 top-full pt-2 z-50 transition-all duration-150",
+                        servicesOpen
+                          ? "opacity-100 translate-y-0 visible"
+                          : "opacity-0 translate-y-2 invisible"
                       )}
-                    </AnimatePresence>
+                      onMouseEnter={() => setServicesOpen(true)}
+                      onMouseLeave={() => setServicesOpen(false)}
+                    >
+                      <div
+                        className="card p-2 grid grid-cols-2 gap-0.5 min-w-[340px]"
+                        style={{ background: "var(--color-base-900)" }}
+                      >
+                        {SERVICE_LINKS.map((s) => (
+                          <Link
+                            key={s.href}
+                            href={s.href}
+                            className="px-3 py-2.5 rounded-md text-sm text-white/70 hover:text-white hover:bg-white/[0.06] transition-colors"
+                          >
+                            {s.label}
+                          </Link>
+                        ))}
+                        <Link
+                          href="/services"
+                          className="col-span-2 px-3 py-2.5 mt-1 rounded-md text-sm font-semibold text-accent-400 hover:bg-accent-950/60 transition-colors border-t border-white/[0.06]"
+                          style={{ color: "var(--color-accent-400)" }}
+                        >
+                          View all services →
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 );
               }
@@ -157,7 +153,10 @@ export function Header() {
             >
               <Settings size={15} />
             </Link>
-            <Link href="/contact" className="btn btn-primary text-sm py-2.5 px-5">
+            {/* prefetch={false}: /contact carries the booking form (zod +
+                react-hook-form). Prefetching it would evaluate those heavy
+                dependencies on every page load, blocking the main thread. */}
+            <Link href="/contact" prefetch={false} className="btn btn-primary text-sm py-2.5 px-5">
               Get Free Quote
             </Link>
           </div>
@@ -174,53 +173,48 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100dvh" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="lg:hidden fixed inset-0 top-16 z-40 overflow-y-auto"
-            style={{ background: "var(--color-base-950)" }}
-          >
-            <nav className="section-container py-6 flex flex-col gap-1" aria-label="Mobile navigation">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="py-3.5 px-4 rounded-lg text-lg font-semibold text-white/80 hover:text-white hover:bg-white/[0.05] transition-colors border-b border-white/[0.05]"
-                  style={{ fontFamily: "var(--font-barlow-condensed)", fontWeight: 700 }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-6 flex flex-col gap-3">
-                <a
-                  href={`tel:${BUSINESS.phone}`}
-                  className="btn btn-secondary justify-center text-base"
-                >
-                  <Phone size={16} />
-                  Call {BUSINESS.phoneDisplay}
-                </a>
-                <Link href="/contact" className="btn btn-primary justify-center text-base">
-                  Get Free Quote
-                </Link>
-              </div>
-              <div className="pt-6 border-t border-white/[0.05]">
-                <Link
-                  href="/admin/login"
-                  className="flex items-center gap-2 py-2 px-1 text-xs text-white/25 hover:text-white/50 transition-colors"
-                >
-                  <Settings size={12} />
-                  Admin Panel
-                </Link>
-              </div>
-            </nav>
-          </motion.div>
+      {/* Mobile menu — CSS opacity/height transition (was AnimatePresence) */}
+      <div
+        className={cn(
+          "lg:hidden fixed inset-0 top-16 z-40 overflow-y-auto transition-all duration-300 ease-in-out",
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         )}
-      </AnimatePresence>
+        style={{ background: "var(--color-base-950)", height: mobileOpen ? "100dvh" : "0" }}
+      >
+        <nav className="section-container py-6 flex flex-col gap-1" aria-label="Mobile navigation">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="py-3.5 px-4 rounded-lg text-lg font-semibold text-white/80 hover:text-white hover:bg-white/[0.05] transition-colors border-b border-white/[0.05]"
+              style={{ fontFamily: "var(--font-barlow-condensed)", fontWeight: 700 }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="pt-6 flex flex-col gap-3">
+            <a
+              href={`tel:${BUSINESS.phone}`}
+              className="btn btn-secondary justify-center text-base"
+            >
+              <Phone size={16} />
+              Call {BUSINESS.phoneDisplay}
+            </a>
+            <Link href="/contact" prefetch={false} className="btn btn-primary justify-center text-base">
+              Get Free Quote
+            </Link>
+          </div>
+          <div className="pt-6 border-t border-white/[0.05]">
+            <Link
+              href="/admin/login"
+              className="flex items-center gap-2 py-2 px-1 text-xs text-white/25 hover:text-white/50 transition-colors"
+            >
+              <Settings size={12} />
+              Admin Panel
+            </Link>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

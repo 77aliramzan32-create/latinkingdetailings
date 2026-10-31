@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Star, ExternalLink } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
 import { buildReviewSchema } from "@/lib/schema";
@@ -6,7 +7,7 @@ import { StarRating } from "@/components/ui/StarRating";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews — 5★ Rated Mobile Car Detailing | Latin King Detailing",
+  title: "Customer Reviews Manchester | 5★ Rated Detailing",
   description:
     "Read verified customer reviews for Latin King Detailing. 5.0 average across Google and Facebook. Mobile car detailing in Urmston, Manchester.",
   alternates: { canonical: "/reviews" },
@@ -142,6 +143,13 @@ export default function ReviewsPage() {
               </div>
             ))}
           </div>
+
+          {/* Leave a review */}          <p className="text-sm mt-10" style={{ color: "rgba(255,255,255,0.55)" }}>
+            Want the same result on your car? See our{" "}
+            <Link href="/services" className="underline" style={{ color: "var(--color-accent-500)" }}>services</Link> and{" "}
+            <Link href="/pricing" className="underline" style={{ color: "var(--color-accent-500)" }}>prices</Link>, or{" "}
+            <Link href="/book" prefetch={false} className="underline" style={{ color: "var(--color-accent-500)" }}>book your detail</Link>.
+          </p>
 
           {/* Leave a review */}
           <div className="mt-14 p-8 rounded-2xl text-center" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>

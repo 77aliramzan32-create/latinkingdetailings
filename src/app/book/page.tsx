@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Phone, MapPin, Clock } from "lucide-react";
+import Link from "next/link";
 import { BookingForm } from "@/components/sections/BookingForm";
 import { BUSINESS } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Book a Free Quote | Mobile Car Detailing — Urmston, Manchester",
-  description:
-    "Request a free, no-obligation quote for mobile car detailing, ceramic coating or valeting across Urmston and Greater Manchester. We come to you — submit your details and we'll call to confirm.",
+  title: "Book a Free Quote | Car Detailing Manchester",
+  description: "Request a free, no-obligation quote for mobile car detailing, ceramic coating or valeting across Urmston & Greater Manchester. We call to confirm.",
   alternates: { canonical: `${BUSINESS.url}/book` },
   robots: { index: false, follow: false },
 };
@@ -37,7 +37,7 @@ export default function BookPage() {
             </h1>
             <p style={{ color: "rgba(255,255,255,0.65)", maxWidth: "42ch", marginBottom: "2rem" }}>
               Fill in the form and we&apos;ll call you back to confirm your slot and give you an
-              accurate quote — no payment needed upfront.
+              accurate quote — no payment needed when you book. A £50 deposit is required to secure bookings over £100.
             </p>
 
             {/* Contact shortcuts */}
@@ -111,6 +111,12 @@ export default function BookPage() {
                 &ldquo;Exceptional attention to detail and a truly professional service.&rdquo;
               </p>
             </div>
+            <p className="text-sm mt-6" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Not sure what you need?{" "}
+              <Link href="/pricing" className="underline" style={{ color: "var(--color-accent-500)" }}>See our prices</Link>, browse{" "}
+              <Link href="/services" className="underline" style={{ color: "var(--color-accent-500)" }}>all services</Link>, or read the{" "}
+              <Link href="/faq" className="underline" style={{ color: "var(--color-accent-500)" }}>FAQs</Link>.
+            </p>
           </div>
 
           {/* Right — form */}

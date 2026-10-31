@@ -7,14 +7,13 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Car Detailing Prices Manchester | Mobile Valeting & Ceramic Coating Costs | Latin King",
-  description:
-    "Car detailing prices in Manchester — mini valet from £55, full detail from £120, paint correction from £300, ceramic coating from £180. Fixed quotes, no hidden costs. Call 07482 225323.",
+  title: "Car Detailing Prices Manchester | From £80",
+  description: "Car detailing prices in Manchester — full valet from £80, full detail from £180, paint correction from £300, ceramic coating from £180. Fixed quotes.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Car Detailing Prices Manchester | Latin King Detailing",
     description:
-      "Transparent car detailing prices in Manchester. Mini valet from £55 · Ceramic coating from £180 · All prices fixed before work starts.",
+      "Transparent car detailing prices in Manchester. Full valet from £80 · Ceramic coating from £180 · All prices fixed before work starts.",
     type: "website",
     url: `${BUSINESS.url}/pricing`,
   },
@@ -24,11 +23,11 @@ const PRICE_TIERS = [
   {
     slug: "mobile-valeting",
     name: "Mobile Valeting",
-    priceFrom: 55,
-    duration: "1.5–3.5 hours",
+    priceFrom: 80,
+    duration: "2.5–3.5 hours",
     tagline: "The everyday clean",
     description:
-      "Our mobile valet service cleans the interior and exterior of your car at your door. Choose from mini valet or full valet.",
+      "Our mobile valet service cleans the interior and exterior of your car at your door — a complete full valet, every time.",
     includes: [
       "Foam-cannon pre-wash and safe two-bucket hand wash",
       "Wheel and tyre cleaning and dressing",
@@ -37,7 +36,9 @@ const PRICE_TIERS = [
       "Interior wipe-down — dashboard, doors, console",
       "Door shut and sill cleaning",
       "Air freshener finish",
-      "Full valet adds: hand polish, seat shampoo, door shuts deep clean",
+      "Hand polish finish",
+      "Seat shampoo or leather conditioning",
+      "Door shuts and boot deep clean",
     ],
     href: "/services/mobile-valeting",
     badge: null,
@@ -45,7 +46,7 @@ const PRICE_TIERS = [
   {
     slug: "car-detailing",
     name: "Car Detailing",
-    priceFrom: 120,
+    priceFrom: 180,
     duration: "4–8 hours",
     tagline: "The complete treatment",
     description:
@@ -184,9 +185,9 @@ const FAQS = [
       "All prices listed are starting points. The exact price for your vehicle is confirmed as a fixed quote before any work begins — based on vehicle size, condition and the specific service required. There are no hidden charges or surprise costs on completion.",
   },
   {
-    question: "How much does a mini valet cost in Manchester?",
+    question: "How much does a full valet cost in Manchester?",
     answer:
-      "A mobile mini valet in Manchester starts from £55 at Latin King Detailing. This covers exterior wash, wheel clean, interior vacuum and wipe-down. A full valet starts from £80.",
+      "A mobile full valet in Manchester starts from £80 at Latin King Detailing. This covers exterior wash, wheel clean, interior vacuum and wipe-down, plus hand polish, seat shampoo or leather conditioning, and door shuts and boot deep clean.",
   },
   {
     question: "How much does ceramic coating cost in Manchester?",
@@ -250,7 +251,7 @@ export default function PricingPage() {
               All services are fully mobile — we come to your door across Greater Manchester with our own water, power and professional-grade products.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact" prefetch={false} className="btn btn-primary">
                 Get My Fixed Quote
               </Link>
               <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">
@@ -326,7 +327,7 @@ export default function PricingPage() {
                 </ul>
 
                 <div className="flex gap-2">
-                  <Link href="/contact" className="btn btn-primary flex-1 justify-center text-sm">
+                  <Link href="/contact" prefetch={false} className="btn btn-primary flex-1 justify-center text-sm">
                     Get Quote
                   </Link>
                   <Link
@@ -391,9 +392,6 @@ export default function PricingPage() {
             </Link>
             <Link href="/blog/ceramic-coating-cost-guide" className="btn btn-secondary text-sm">
               Ceramic Coating Cost Guide
-            </Link>
-            <Link href="/blog/mini-valet-vs-full-valet" className="btn btn-secondary text-sm">
-              Mini Valet vs Full Valet
             </Link>
           </div>
         </div>

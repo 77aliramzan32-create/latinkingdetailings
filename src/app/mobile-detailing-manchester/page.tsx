@@ -8,14 +8,13 @@ import { CTASection } from "@/components/sections/CTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 export const metadata: Metadata = {
-  title: "Mobile Car Detailing Manchester | We Come to You | Latin King Detailing",
-  description:
-    "Mobile car detailing in Manchester — we bring everything to your door. No garage visit needed. Ceramic coating, paint correction, valeting & interior detailing across Greater Manchester. 5★ rated. From £55. Call 07482 225323.",
+  title: "Mobile Detailing Manchester | Valeting at Your Door",
+  description: "Mobile car detailing in Manchester — we bring everything to your door. Ceramic coating, paint correction & valeting. 5★ rated. From £80.",
   alternates: { canonical: "/mobile-detailing-manchester" },
   openGraph: {
     title: "Mobile Car Detailing Manchester | Latin King Detailing",
     description:
-      "We come to you — own water, power and products. Ceramic coating, paint correction & valeting across Greater Manchester. 5★ rated. From £55.",
+      "We come to you — own water, power and products. Ceramic coating, paint correction & valeting across Greater Manchester. 5★ rated. From £80.",
     type: "website",
     url: `${BUSINESS.url}/mobile-detailing-manchester`,
   },
@@ -49,9 +48,8 @@ const WHY_MOBILE = [
 ];
 
 const SERVICES = [
-  { name: "Mobile Mini Valet", href: "/services/mobile-valeting", price: 55, desc: "Exterior wash, wheel clean, interior vacuum & wipe-down. 1.5–2 hours." },
   { name: "Mobile Full Valet", href: "/services/mobile-valeting", price: 80, desc: "Full interior and exterior clean, hand polish, door shuts and boot. 2.5–3.5 hours." },
-  { name: "Mobile Car Detail", href: "/services/car-detailing", price: 120, desc: "Full decontamination, machine polish, protection and interior deep clean. 4–8 hours." },
+  { name: "Mobile Car Detail", href: "/services/car-detailing", price: 180, desc: "Full decontamination, machine polish, protection and interior deep clean. 4–8 hours." },
   { name: "Mobile Ceramic Coating", href: "/ceramic-coating-manchester", price: 180, desc: "SiO₂ coating lasting 2–3 years. Full paint prep always included. 1–2 days." },
   { name: "Mobile Paint Correction", href: "/services/paint-correction", price: 300, desc: "Machine removal of swirl marks, scratches & oxidation. 6–12 hours." },
   { name: "Mobile Interior Detail", href: "/services/interior-detailing", price: 80, desc: "Steam clean, hot water extraction, odour elimination. 2–4 hours." },
@@ -66,7 +64,7 @@ const FAQS = [
   {
     question: "What does mobile car detailing include?",
     answer:
-      "Mobile car detailing from Latin King Detailing covers the full range of professional detailing services — from mobile mini valets and full valets through to paint correction, ceramic coating and full interior deep cleans. We arrive fully self-sufficient and perform the same high-quality work at your location as any fixed-premises detailer.",
+      "Mobile car detailing from Latin King Detailing covers the full range of professional detailing services — from full valets through to paint correction, ceramic coating and full interior deep cleans. We arrive fully self-sufficient and perform the same high-quality work at your location as any fixed-premises detailer.",
   },
   {
     question: "Do you need water or electricity at my location?",
@@ -76,7 +74,7 @@ const FAQS = [
   {
     question: "How much does mobile car detailing cost in Manchester?",
     answer:
-      "Mobile mini valeting in Manchester starts from £55. A mobile full valet starts from £80. Full car detailing packages start from £120. Paint correction from £300. Ceramic coating from £180. All prices are fixed and confirmed before any work begins.",
+      "Mobile valeting in Manchester starts from £80 for a full valet. Full car detailing packages start from £180. Paint correction from £300. Ceramic coating from £180. All prices are fixed and confirmed before any work begins.",
   },
   {
     question: "Is mobile car detailing as good as a garage service?",
@@ -103,7 +101,7 @@ export default function MobileDetailingManchesterPage() {
     serviceSlug: "mobile-detailing",
     serviceDescription:
       "Fully mobile car detailing in Manchester — we come to you with own water, power and professional products. Ceramic coating, paint correction, valeting and interior detailing at your door.",
-    priceFrom: 55,
+    priceFrom: 80,
     locationName: "Manchester",
     locationSlug: "manchester",
   });
@@ -152,7 +150,7 @@ export default function MobileDetailingManchesterPage() {
                 className="text-base leading-relaxed mb-8"
                 style={{ color: "rgba(255,255,255,0.65)", maxWidth: "54ch" }}
               >
-                From a quick mobile mini valet to a multi-stage paint correction and ceramic coating — every service is available at your door across Greater Manchester. Based in Urmston, we cover the full region with same-day and next-day appointments available.
+                From a full valet to a multi-stage paint correction and ceramic coating — every service is available at your door across Greater Manchester. Based in Urmston, we cover the full region with same-day and next-day appointments available.
               </p>
 
               <div className="flex flex-wrap gap-5 mb-8">
@@ -174,7 +172,7 @@ export default function MobileDetailingManchesterPage() {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact" prefetch={false} className="btn btn-primary">
                   Book Mobile Detailing
                 </Link>
                 <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">

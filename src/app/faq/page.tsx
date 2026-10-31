@@ -5,9 +5,8 @@ import { buildFAQSchema } from "@/lib/schema";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Car Detailing FAQ — Common Questions Answered | Latin King Detailing",
-  description:
-    "Frequently asked questions about mobile car detailing, ceramic coating, paint correction and valeting in Urmston and Greater Manchester. Answered directly and clearly.",
+  title: "Car Detailing FAQs Manchester | Latin King",
+  description: "Frequently asked questions about mobile car detailing, ceramic coating, paint correction & valeting in Urmston & Greater Manchester. Answered clearly.",
   alternates: { canonical: "/faq" },
 };
 
@@ -79,11 +78,6 @@ const FAQS = [
   {
     category: "Valeting",
     items: [
-      {
-        question: "What is the difference between a mini valet and a full valet?",
-        answer:
-          "A mini valet covers the core cleaning tasks: exterior wash, wheel clean, windows, interior vacuum and wipe-down. A full valet adds hand polish, deep cleaning of door shuts, boot area, seat shampoo or leather conditioning, and comprehensive trim and glass work inside.",
-      },
       {
         question: "What is a maintenance valet?",
         answer:
@@ -167,12 +161,12 @@ const FAQS = [
       {
         question: "How much does mobile car valeting in Manchester cost?",
         answer:
-          "A mobile mini valet starts from £55. A full valet starts from £80–£100 depending on vehicle size. Full car detailing packages start from £120. Paint correction starts from £300. Ceramic coating packages start from £180. All prices are confirmed as a fixed quote before any work begins.",
+          "A mobile full valet starts from £80. Full car detailing packages start from £180. Paint correction starts from £300. Ceramic coating packages start from £180. All prices are confirmed as a fixed quote before any work begins.",
       },
       {
         question: "Do you offer payment plans?",
         answer:
-          "Payment is due on completion of the service. We accept bank transfer and cash. For large packages such as full paint correction with ceramic coating, a deposit may be requested at booking.",
+          "Payment is due on completion of the service. We accept bank transfer and cash. For bookings over £100, a £50 deposit is required to secure your appointment — it's deducted from your final price.",
       },
       {
         question: "What vehicle types do you work on?",
@@ -263,7 +257,7 @@ export default function FAQPage() {
               <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary whitespace-nowrap">
                 Call {BUSINESS.phoneDisplay}
               </a>
-              <Link href="/contact" className="btn btn-primary whitespace-nowrap">
+              <Link href="/contact" prefetch={false} className="btn btn-primary whitespace-nowrap">
                 Send a message
               </Link>
             </div>

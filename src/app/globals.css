@@ -391,6 +391,36 @@ select.form-input {
   animation: fadeInUp 0.5s ease both;
 }
 
+/* Hero entrance — CSS-only (replaces framer-motion stagger on load) */
+.hero-fade-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-scroll-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-scroll-in {
+  animation: hero-scroll-in 0.5s ease 1.2s both;
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.hero-bounce {
+  animation: hero-bounce 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up,
+  .hero-scroll-in,
+  .hero-bounce,
+  .animate-fade-in-up {
+    animation: none !important;
+  }
+}
+
 /* ============================================================
    BEFORE/AFTER SLIDER
    ============================================================ */

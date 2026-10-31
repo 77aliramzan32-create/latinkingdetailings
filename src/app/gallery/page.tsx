@@ -10,9 +10,8 @@ import { SITE_IMAGES } from "@/lib/images";
 const GALLERY_IMAGES = SITE_IMAGES.filter((img) => img.service === "gallery");
 
 export const metadata: Metadata = {
-  title: "Before & After Gallery — Car Detailing Results | Latin King Detailing",
-  description:
-    "See real before and after results from Latin King Detailing. Paint correction, ceramic coating, interior deep cleans and full details across Urmston and Manchester.",
+  title: "Car Detailing Gallery Manchester | Our Work",
+  description: "Real before & after results from Latin King Detailing — paint correction, ceramic coating, interior deep cleans & full details across Manchester.",
   alternates: { canonical: "/gallery" },
 };
 
@@ -108,7 +107,7 @@ export default function GalleryPage() {
                   <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.55)" }}>
                     Drag the slider across the image above to compare the before and after result. Every transformation is achieved using professional-grade products and techniques — no shortcuts, no filters.
                   </p>
-                  <Link href="/contact" className="btn btn-primary">
+                  <Link href="/contact" prefetch={false} className="btn btn-primary">
                     Book This Service
                   </Link>
                 </div>

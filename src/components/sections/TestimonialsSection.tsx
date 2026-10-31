@@ -1,10 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
 import { StarRating } from "@/components/ui/StarRating";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+
+// Server component: scroll reveals are the tiny Reveal wrapper —
+// no framer-motion, so this section needs no hydration of its own.
 
 export function TestimonialsSection() {
   return (
@@ -33,12 +34,10 @@ export function TestimonialsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {BUSINESS.reviews.map((review, i) => (
-            <motion.div
+            <Reveal
               key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
+              y={24}
+              delay={i * 0.12}
               className="card gloss-sheen p-7 flex flex-col gap-4"
             >
               <Quote
@@ -63,16 +62,15 @@ export function TestimonialsSection() {
                 </div>
                 <StarRating rating={review.rating} size={13} />
               </footer>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
         {/* Aggregate badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        <Reveal
+          y={0}
+          scale={0.95}
+          delay={0.4}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 p-6 rounded-xl"
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
@@ -92,7 +90,7 @@ export function TestimonialsSection() {
               {BUSINESS.rating.ratingCount}+ verified reviews on Google and Facebook
             </p>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

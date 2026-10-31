@@ -33,11 +33,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.url),
   title: {
-    default: `Car Detailing Manchester | Mobile Valeting & Ceramic Coating — Latin King Detailing`,
-    template: `%s | ${BUSINESS.name}`,
+    default: `Car Detailing Manchester | Latin King Detailing`,
+    template: `%s`,
   },
   description:
-    "Professional mobile car detailing in Manchester & Urmston. Ceramic coating, paint correction, machine polishing & interior detailing — we come to your door. 5★ rated. From £55. Call 07482 225323.",
+    "Professional mobile car detailing in Manchester & Urmston. Ceramic coating, paint correction, machine polishing & interior detailing — we come to your door.",
   keywords: [
     "car wash urmston",
     "car valet urmston",
@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     "manchester car detailing",
     "car detailing manchester",
     "mobile car valet urmston",
-    "mini valet near me",
     "car valet near me",
     "car cleaning near me",
     "ceramic coating manchester",
@@ -125,11 +124,6 @@ export default function RootLayout({
       className={`${barlow.variable} ${barlowCondensed.variable}`}
     >
       <head>
-        {/* Resource hints for Google Fonts performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
         {/* Structured data */}
         <script
           type="application/ld+json"

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Link from "next/link";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { BUSINESS } from "@/lib/business";
 import { BookingForm } from "@/components/sections/BookingForm";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote — Mobile Car Detailing in Manchester | Latin King Detailing",
-  description:
-    "Contact Latin King Detailing for a free, no-obligation quote. Mobile car detailing, ceramic coating and paint correction across Urmston and Greater Manchester. Call 07482 225323.",
+  title: "Contact Latin King Detailing | Manchester",
+  description: "Contact Latin King Detailing for a free quote. Mobile car detailing, ceramic coating & paint correction across Urmston & Manchester. Call 07482 225323.",
   alternates: { canonical: "/contact" },
 };
 
@@ -74,6 +74,7 @@ export default function ContactPage() {
                       {BUSINESS.address.street},<br />
                       {BUSINESS.address.city}, {BUSINESS.address.postcode}
                     </address>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Latin+King+Detailing+Urmston" target="_blank" rel="noopener noreferrer" className="text-sm underline" style={{ color: "var(--color-accent-500)" }}>View on Google Maps</a>
                   </div>
                 </div>
 
@@ -115,6 +116,12 @@ export default function ContactPage() {
                   Facebook
                 </a>
               </div>
+              <p className="text-sm mt-6" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Before you book, see our{" "}
+                <Link href="/services" className="underline" style={{ color: "var(--color-accent-500)" }}>services</Link> and{" "}
+                <Link href="/pricing" className="underline" style={{ color: "var(--color-accent-500)" }}>prices</Link>, or check the{" "}
+                <Link href="/areas" className="underline" style={{ color: "var(--color-accent-500)" }}>areas we cover</Link>.
+              </p>
             </div>
 
             {/* Right: form */}

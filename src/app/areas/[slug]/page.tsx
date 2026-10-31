@@ -11,82 +11,82 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 // Keyword-optimised metadata for highest-value areas
 const AREA_META: Record<string, { title: string; description: string }> = {
   urmston: {
-    title: "Car Wash Urmston | Car Valet Urmston M41 | Mobile Car Detailing Near Me",
+    title: "Car Wash Urmston | Car Valet Urmston M41",
     description:
-      "Best mobile car wash & valet in Urmston (M41) — hand car wash alternative, mini valet, full valet, ceramic coating & paint correction at your door. 5★ rated. Call 07482 225323.",
+      "Best mobile car wash & valet in Urmston (M41) — hand car wash alternative, full valet, ceramic coating & paint correction at your door. 5★ rated. Call 07482 225323.",
   },
   stretford: {
-    title: "Car Valet Stretford | Mobile Car Detailing M32 | Latin King Detailing",
+    title: "Car Valet Stretford | Mobile Car Detailing M32",
     description:
       "Mobile car valet & detailing in Stretford (M32). Professional car cleaning, ceramic coating & paint correction at your door in Stretford. 5★ rated. Call 07482 225323.",
   },
   sale: {
-    title: "Car Detailing Sale Manchester | Mobile Car Valet M33 | Latin King Detailing",
+    title: "Car Detailing Sale Manchester | Mobile Car Valet M33",
     description:
       "Mobile car detailing & valeting in Sale (M33). Car wash, valet, ceramic coating & paint correction at your door in Sale & Sale Moor. 5★ rated. Call 07482 225323.",
   },
   didsbury: {
-    title: "Car Detailing Didsbury | Mobile Car Valet South Manchester | Latin King",
+    title: "Car Detailing Didsbury | Mobile Car Valet South Manchester",
     description:
       "Professional car detailing in Didsbury — mobile car valet, ceramic coating & paint correction at your door. Serving Didsbury & South Manchester. 5★ rated. Book now.",
   },
   altrincham: {
-    title: "Car Detailing Altrincham | Mobile Car Valet WA14 | Latin King Detailing",
+    title: "Car Detailing Altrincham | Mobile Car Valet WA14",
     description:
       "Mobile car detailing & valeting in Altrincham (WA14, WA15). Ceramic coating, paint correction & full car valet at your door. 5★ rated. Call 07482 225323.",
   },
   salford: {
-    title: "Car Detailing Salford | Mobile Car Valet Near Me | Latin King Detailing",
+    title: "Car Detailing Salford | Mobile Car Valet Near Me",
     description:
       "Mobile car detailing in Salford (M27, M6, M7). Car valet, ceramic coating & paint correction at your door — Salford Quays, Pendleton & Swinton. 5★ rated. Call 07482 225323.",
   },
   eccles: {
-    title: "Car Detailing Eccles | Mobile Car Valet M30 | Latin King Detailing",
+    title: "Car Detailing Eccles | Mobile Car Valet M30",
     description:
       "Mobile car detailing & valeting in Eccles (M30). Car cleaning, ceramic coating & paint correction at your door across Eccles & Salford. 5★ rated. Book now.",
   },
   flixton: {
-    title: "Car Valet Flixton | Mobile Car Detailing M41 | Latin King Detailing",
+    title: "Car Valet Flixton | Mobile Car Detailing M41",
     description:
       "Mobile car valet & detailing in Flixton (M41). Professional car cleaning & ceramic coating at your door — rapid response from our Urmston base. 5★ rated. Call 07482 225323.",
   },
   chorlton: {
-    title: "Car Detailing Chorlton Manchester | Mobile Car Valet M21 | Latin King",
+    title: "Car Detailing Chorlton Manchester | Mobile Car Valet M21",
     description:
       "Mobile car detailing & valeting in Chorlton-cum-Hardy (M21). Car cleaning, ceramic coating & paint correction at your door in Chorlton. 5★ rated. Book now.",
   },
   manchester: {
-    title: "Car Detailing Manchester | Mobile Ceramic Coating & Paint Correction | Latin King Detailing",
+    title: "Car Detailing Manchester | Ceramic Coating & Correction",
     description:
-      "Professional mobile car detailing across Manchester — ceramic coating, paint correction, machine polishing & interior detailing at your door. 5★ rated. From £55. Call 07482 225323.",
+      "Professional mobile car detailing across Manchester — ceramic coating, paint correction, machine polishing & interior detailing at your door. 5★ rated. From £80. Call 07482 225323.",
   },
   "old-trafford": {
-    title: "Car Detailing Old Trafford | Mobile Car Valet M16 M17 | Latin King Detailing",
+    title: "Car Detailing Old Trafford | Mobile Car Valet M16 M17",
     description:
       "Mobile car detailing & valeting in Old Trafford (M16, M17). Ceramic coating, paint correction & full car valet at your door. 5★ rated. Call 07482 225323.",
   },
   partington: {
-    title: "Car Detailing Partington | Mobile Car Wash Partington M31 | Latin King",
+    title: "Car Detailing Partington | Mobile Car Wash Partington M31",
     description:
       "Mobile car detailing & valeting in Partington (M31) — hand car wash alternative, full detail, ceramic coating & paint correction at your door. 5★ rated. Call 07482 225323.",
   },
   irlam: {
-    title: "Car Detailing Irlam | Mobile Car Valet M44 | Latin King Detailing",
+    title: "Car Detailing Irlam | Mobile Car Valet M44",
     description:
       "Mobile car detailing & valeting in Irlam (M44). Full car detail, ceramic coating & paint correction at your door in Irlam & Cadishead. 5★ rated. Call 07482 225323.",
   },
   timperley: {
-    title: "Car Detailing Timperley | Mobile Car Valet WA15 | Latin King Detailing",
+    title: "Car Detailing Timperley | Mobile Car Valet WA15",
     description:
       "Mobile car detailing & valeting in Timperley (WA15). Ceramic coating, paint correction & full car valet at your door. 5★ rated. Call 07482 225323.",
   },
   carrington: {
-    title: "Car Detailing Carrington | Mobile Car Valet M31 | Latin King Detailing",
+    title: "Car Detailing Carrington | Mobile Car Valet M31",
     description:
       "Mobile car detailing & valeting in Carrington (M31). Car cleaning, ceramic coating & paint correction at your door. 5★ rated. Call 07482 225323.",
   },
   davyhulme: {
-    title: "Car Detailing Davyhulme | Mobile Car Valet M41 | Latin King Detailing",
+    title: "Car Detailing Davyhulme | Mobile Car Valet M41",
     description:
       "Mobile car detailing & valeting in Davyhulme (M41) — next to our Urmston HQ, same-day slots available. Ceramic coating, paint correction & full valet at your door. 5★ rated. Call 07482 225323.",
   },
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!area) return {};
   const meta = AREA_META[slug];
   return {
-    title: meta?.title ?? `Car Detailing & Valeting in ${area.name} | Latin King Detailing`,
+    title: meta?.title ?? `Car Detailing & Valeting in ${area.name}`,
     description: meta?.description ?? `Mobile car detailing, valeting, ceramic coating and paint correction in ${area.name}, Greater Manchester. We come to your door. 5★ rated. Call 07482 225323.`,
     alternates: { canonical: `/areas/${slug}` },
   };
@@ -164,7 +164,7 @@ export default async function AreaPage({ params }: PageProps) {
                   : `All of our services — from mobile valeting to ceramic coating and paint correction — are available in ${area.name} with the same quality and professionalism as our home base in Urmston.`}
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact" prefetch={false} className="btn btn-primary">
                   Book in {area.name}
                 </Link>
                 <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">
@@ -173,7 +173,7 @@ export default async function AreaPage({ params }: PageProps) {
                 </a>
               </div>
               <p className="mt-3 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                No payment required — fixed quote confirmed before any work starts.
+                No payment needed when you book — a £50 deposit secures bookings over £100. Fixed quote confirmed before any work starts.
               </p>
             </div>
 
@@ -223,7 +223,7 @@ export default async function AreaPage({ params }: PageProps) {
               },
               {
                 q: `How much does a car valet in ${area.name} cost?`,
-                a: `A mobile valet in ${area.name} starts from £55 for a mini valet. Full valets and detailing packages start from £80–£120+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
+                a: `A full valet in ${area.name} starts from £80. Detailing packages start from £180+ depending on vehicle size and service level. We provide a fixed quote before any work begins — no surprise charges.`,
               },
               {
                 q: `What areas near ${area.name} do you also cover?`,

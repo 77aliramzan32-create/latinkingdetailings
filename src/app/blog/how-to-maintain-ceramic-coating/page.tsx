@@ -206,6 +206,22 @@ export default function MaintainCeramicPost() {
               <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>Ceramic coating vs wax — which paint protection is right for your car?</span>
               <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
             </Link>
+            <Link href="/blog/ceramic-coating-manchester-cost-benefits" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+              <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>Ceramic coating in Manchester — costs, benefits and what affects the price</span>
+              <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+            </Link>
+            <Link href="/pricing" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+              <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>View all Latin King prices</span>
+              <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+            </Link>
+            <a href="https://en.wikipedia.org/wiki/Clearcoat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+              <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>What is a clear coat? — Wikipedia (external reference)</span>
+              <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+            </a>
+            <a href="https://gtechniq.com/how-to-maintain-ceramic-coating/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+              <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>How to maintain a ceramic coating — Gtechniq (external reference)</span>
+              <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+            </a>
           </div>
         </div>
       </article>

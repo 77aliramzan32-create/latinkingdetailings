@@ -4,7 +4,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { buildBlogSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Car Detailing Blog — Tips, Guides & Expert Advice | Latin King Detailing",
+  title: "Car Detailing Blog | Tips & Guides Manchester",
   description:
     "Expert car detailing guides, comparisons and advice from Latin King Detailing in Urmston. Ceramic coating vs wax, paint correction explained, and more.",
   alternates: { canonical: "/blog" },
@@ -37,6 +37,78 @@ const POSTS = [
     readTime: "5 min read",
     category: "Comparison",
     date: "2025-03-01",
+  },
+  {
+    slug: "ceramic-coating-manchester-cost-benefits",
+    title: "Ceramic Coating Manchester: Cost, Benefits & How Long It Lasts",
+    excerpt:
+      "Ceramic coating in Manchester from £180. What it costs, how long it lasts (2–3 years), what it protects against, and whether it's worth it for your car — the honest guide from a professional mobile detailer.",
+    readTime: "6 min read",
+    category: "Ceramic Coating Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "swirl-mark-removal-manchester",
+    title: "Swirl Mark Removal Manchester: What Paint Correction Really Does",
+    excerpt:
+      "Swirl marks are thousands of microscopic scratches in your clear coat, mostly caused by automated washes. How paint correction removes them permanently, what it costs from £300, and how to stop them coming back.",
+    readTime: "6 min read",
+    category: "Paint Correction Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "hand-car-wash-vs-mobile-valeting",
+    title: "Hand Car Wash vs Mobile Valeting: Which Is Safer for Your Paint?",
+    excerpt:
+      "A forecourt hand wash is cheap and fast. A mobile valet costs from £80 and takes half a day. Here's what the difference actually does to your paint — and why cheap washes cost £300 to undo.",
+    readTime: "6 min read",
+    category: "Comparison",
+    date: "2026-10-31",
+  },
+  {
+    slug: "engine-bay-steam-cleaning-safe",
+    title: "Engine Bay Cleaning Near Me: Is Steam Cleaning Safe for Modern Cars?",
+    excerpt:
+      "Your engine bay collects oil, brake dust and road grime for years. How professional steam cleaning works, why it's safer than a pressure washer, and what it costs from £50 in Manchester.",
+    readTime: "5 min read",
+    category: "Engine Bay Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "car-detailing-salford-guide",
+    title: "Car Detailing Salford: Mobile Detailing at Your Door",
+    excerpt:
+      "Mobile car detailing across Salford — Salford Quays, Pendleton, Swinton and all M5, M6, M7 and M27 postcodes. Full valet from £80, full detail from £180, ceramic coating from £180.",
+    readTime: "5 min read",
+    category: "Area Guide",
+    date: "2026-10-31",
+  },
+  {
+    slug: "mini-valet-vs-full-valet",
+    title: "Mini Valet vs Full Valet: What's the Difference?",
+    excerpt:
+      "Mini valet vs full valet — what's actually included, how long each takes, which one your car needs and how much each costs in Manchester. Clear guide from a professional mobile detailer.",
+    readTime: "4 min read",
+    category: "Valeting Guide",
+    date: "2025-06-15",
+  },
+  {
+    slug: "paint-correction-vs-machine-polishing",
+    title: "Paint Correction vs Machine Polishing: What's the Difference?",
+    excerpt:
+      "Machine polishing and paint correction both use a machine — but they do very different jobs. Which one your paint actually needs, what each costs, and when to choose which.",
+    readTime: "5 min read",
+    category: "Comparison",
+    date: "2025-07-01",
+  },
+  {
+    slug: "ceramic-coating-cost-guide",
+    title: "How Much Does Ceramic Coating Cost in the UK?",
+    excerpt:
+      "Ceramic coating prices in the UK explained — what affects the quote, what a proper package includes, and how to tell a real coating from a spray sealant.",
+    readTime: "6 min read",
+    category: "Ceramic Coating Guide",
+    date: "2025-06-01",
   },
 ];
 

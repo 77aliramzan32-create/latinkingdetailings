@@ -1,10 +1,11 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
 import { Star, MapPin, CheckCircle, Award } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
+import { Reveal } from "@/components/ui/Reveal";
+import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 
+// Server component: scroll reveals are the tiny Reveal wrapper and the
+// count-up numbers are the AnimatedNumber client island — no framer-motion,
+// so this section needs no hydration of its own.
 interface Stat {
   value: number;
   suffix: string;
@@ -39,41 +40,6 @@ const STATS: Stat[] = [
   },
 ];
 
-function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) {
-  const [current, setCurrent] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
-  useEffect(() => {
-    if (!inView) return;
-    const duration = 1200;
-    const steps = 40;
-    const step = target / steps;
-    let count = 0;
-    const timer = setInterval(() => {
-      count += step;
-      if (count >= target) {
-        setCurrent(target);
-        clearInterval(timer);
-      } else {
-        setCurrent(Math.round(count * 10) / 10);
-      }
-    }, duration / steps);
-    return () => clearInterval(timer);
-  }, [inView, target]);
-
-  const display = Number.isInteger(target)
-    ? Math.round(current).toString()
-    : current.toFixed(1);
-
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  );
-}
-
 export function StatsSection() {
   return (
     <section
@@ -84,12 +50,11 @@ export function StatsSection() {
       <div className="section-container py-14">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {STATS.map((stat, i) => (
-            <motion.div
+            <Reveal
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              y={20}
+              delay={i * 0.1}
+              margin="-60px"
               className="flex flex-col items-center lg:items-start gap-3 text-center lg:text-left"
             >
               <div
@@ -114,7 +79,7 @@ export function StatsSection() {
                   {stat.label}
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
         <p className="text-center text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>

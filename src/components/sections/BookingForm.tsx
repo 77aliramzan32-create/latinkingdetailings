@@ -278,7 +278,7 @@ export function BookingForm() {
         className="text-center text-xs"
         style={{ color: "rgba(255,255,255,0.5)" }}
       >
-        No payment required — we&apos;ll call to confirm and quote before any work starts.
+        No payment needed when you book — we&apos;ll call to confirm your quote; a £50 deposit secures bookings over £100.
       </p>
     </form>
   );

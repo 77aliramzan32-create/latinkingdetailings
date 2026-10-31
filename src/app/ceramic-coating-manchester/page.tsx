@@ -8,9 +8,8 @@ import { CTASection } from "@/components/sections/CTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 export const metadata: Metadata = {
-  title: "Ceramic Coating Manchester | Best SiO₂ Nano Coating Near Me | Latin King Detailing",
-  description:
-    "Professional ceramic coating in Manchester — SiO₂ nano-coating lasts 2–3 years, hydrophobic & UV-resistant. Full paint correction prep included. Mobile service at your door. From £180. Call 07482 225323.",
+  title: "Ceramic Coating Manchester | From £180",
+  description: "Professional ceramic coating in Manchester — SiO₂ nano-coating lasts 2–3 years, hydrophobic & UV-resistant. Mobile service at your door. From £180.",
   alternates: { canonical: "/ceramic-coating-manchester" },
   openGraph: {
     title: "Ceramic Coating Manchester | Latin King Detailing",
@@ -180,7 +179,7 @@ export default function CeramicCoatingManchesterPage() {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact" prefetch={false} className="btn btn-primary">
                   Get a Ceramic Coating Quote
                 </Link>
                 <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">
@@ -223,7 +222,7 @@ export default function CeramicCoatingManchesterPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn btn-primary w-full justify-center mt-6">
+              <Link href="/contact" prefetch={false} className="btn btn-primary w-full justify-center mt-6">
                 Book Ceramic Coating
               </Link>
             </div>

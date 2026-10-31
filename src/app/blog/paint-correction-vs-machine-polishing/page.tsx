@@ -298,6 +298,9 @@ export default function PaintCorrectionVsMachinePolishingPage() {
                   <Link href="/pricing" className="flex items-center gap-1.5 text-sm" style={{ color: "var(--color-accent-500)" }}>
                     View All Prices <ArrowRight size={13} />
                   </Link>
+                  <a href="https://en.wikipedia.org/wiki/Clearcoat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm" style={{ color: "var(--color-accent-500)" }}>
+                    What is a clear coat? — Wikipedia <ArrowRight size={13} />
+                  </a>
                 </div>
               </div>
             </div>

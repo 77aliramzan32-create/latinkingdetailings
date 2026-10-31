@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { cn } from "@/lib/utils";
 
 const FAQS = [
   {
@@ -27,9 +28,9 @@ const FAQS = [
       "Yes — ceramic coating and paint correction are two of our most popular services across Urmston, Trafford and the wider Greater Manchester area. Ceramic coating provides a permanent SiO₂ hydrophobic shield lasting 2–3 years. Paint correction removes swirl marks, light scratches and oxidation using professional machine polishing equipment. Both are carried out at your location.",
   },
   {
-    question: "How much does a mobile car wash or mini valet cost in Urmston?",
+    question: "How much does a mobile full valet cost in Urmston?",
     answer:
-      "Our mobile car wash and mini valet service in Urmston starts from £55. A full valet starts from £80, a full car detail from £120, and ceramic coating from £180. Every price includes us coming to your home or workplace in Urmston (M41) or any covered area — no travel required. We confirm your exact quote before any work begins.",
+      "Our mobile full valet service in Urmston starts from £80, a full car detail from £180, and ceramic coating from £180. Every price includes us coming to your home or workplace in Urmston (M41) or any covered area — no travel required. We confirm your exact quote before any work begins.",
   },
   {
     question: "Do you detail sports cars and exotic vehicles in Manchester?",
@@ -83,12 +84,11 @@ export function HomeFAQSection() {
           {FAQS.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <motion.div
+              <Reveal
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
+                y={16}
+                delay={i * 0.07}
+                margin="-30px"
                 className="rounded-xl overflow-hidden"
                 style={{ border: "1px solid var(--color-border)", background: "var(--color-base-900)" }}
               >
@@ -100,36 +100,34 @@ export function HomeFAQSection() {
                   <span className="font-semibold text-white text-sm md:text-base leading-snug">
                     {faq.question}
                   </span>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="flex-shrink-0"
+                  <span
+                    className={cn(
+                      "flex-shrink-0 transition-transform duration-300",
+                      isOpen && "rotate-180"
+                    )}
                     style={{ color: "var(--color-accent-500)" }}
                   >
                     <ChevronDown size={18} />
-                  </motion.span>
+                  </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      style={{ overflow: "hidden" }}
-                    >
-                      <p
-                        className="px-6 pb-6 text-sm leading-relaxed"
-                        style={{ color: "rgba(255,255,255,0.6)" }}
-                      >
-                        {faq.answer}
-                      </p>
-                    </motion.div>
+                {/* CSS grid-rows expand/collapse (replaces AnimatePresence height animation) */}
+                <div
+                  className={cn(
+                    "grid transition-all duration-300 ease-in-out",
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   )}
-                </AnimatePresence>
-              </motion.div>
+                >
+                  <div className="overflow-hidden">
+                    <p
+                      className="px-6 pb-6 text-sm leading-relaxed"
+                      style={{ color: "rgba(255,255,255,0.6)" }}
+                    >
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
             );
           })}
         </div>

@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
 
+  // Trim per-icon imports into smaller chunks (lucide-react is the
+  // biggest site dependency left after framer-motion was removed).
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+
   async headers() {
     return [
       {

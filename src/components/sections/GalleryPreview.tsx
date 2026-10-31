@@ -17,7 +17,10 @@ export function GalleryPreview() {
         />
 
         <div className="mb-10">
-          <GalleryGrid images={PREVIEW_IMAGES} priorityCount={4} />
+          {/* priorityCount 0: this preview sits below the fold on the
+              homepage, so none of its images should load eagerly and
+              compete with the hero (LCP) image for bandwidth. */}
+          <GalleryGrid images={PREVIEW_IMAGES} priorityCount={0} />
         </div>
 
         <div className="text-center">

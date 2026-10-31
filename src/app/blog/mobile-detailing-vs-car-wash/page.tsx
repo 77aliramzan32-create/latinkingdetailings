@@ -104,7 +104,7 @@ export default function MobileVsCarWashPost() {
               ["Swirl removal", "Not possible", "Machine polishing available"],
               ["Convenience", "Drive-in (travel required)", "We come to you"],
               ["Time on site", "3–5 minutes", "2–8+ hours (thorough)"],
-              ["Cost", "£5–£15", "From £55 (mini valet)"],
+              ["Cost", "£5–£15", "From £80 (full valet)"],
             ].map(([factor, auto, mobile]) => (
               <div key={factor} className="grid grid-cols-3 p-4 text-sm border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <span className="font-semibold text-white">{factor}</span>
@@ -176,12 +176,18 @@ export default function MobileVsCarWashPost() {
             {[
               { href: "/blog/ceramic-coating-vs-wax", label: "Ceramic coating vs wax — which protection lasts longer?" },
               { href: "/blog/how-to-maintain-ceramic-coating", label: "How to maintain a ceramic coating between professional washes" },
+              { href: "/blog/hand-car-wash-vs-mobile-valeting", label: "Hand car wash vs mobile valeting — which is better for your paint?" },
+              { href: "/services/mobile-valeting", label: "Mobile valeting service — a full valet at your door" },
             ].map((link) => (
               <Link key={link.href} href={link.href} className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
                 <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>{link.label}</span>
                 <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
               </Link>
             ))}
+            <a href="https://en.wikipedia.org/wiki/Car_wash" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+              <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>Car wash types explained — Wikipedia (external reference)</span>
+              <ArrowRight size={14} className="flex-shrink-0" style={{ color: "rgba(255,255,255,0.3)" }} />
+            </a>
           </div>
         </div>
       </article>
@@ -189,7 +195,7 @@ export default function MobileVsCarWashPost() {
       <CTASection
         eyebrow="Try the real thing"
         title="Book a mobile detail in Manchester"
-        description="Professional mobile car detailing at your door across Urmston, Trafford and Greater Manchester. Starting from £55."
+        description="Professional mobile car detailing at your door across Urmston, Trafford and Greater Manchester. Starting from £80."
       />
     </>
   );

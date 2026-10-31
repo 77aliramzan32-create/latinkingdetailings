@@ -11,47 +11,47 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 // Per-service SEO metadata
 const SERVICE_META: Record<string, { title: string; description: string }> = {
   "mobile-valeting": {
-    title: "Car Valet Urmston | Mini Valet Near Me | Mobile Car Wash Manchester",
+    title: "Car Valet Urmston | Full Valet Near Me | Mobile Car Wash",
     description:
-      "Professional mobile car valet in Urmston & Manchester — mini valet, full valet & hand car wash alternative. We come to you. 5★ rated. From £55. Call 07482 225323.",
+      "Professional mobile car valet in Urmston & Manchester — full valet & hand car wash alternative. We come to you. 5★ rated. From £80. Call 07482 225323.",
   },
   "car-detailing": {
     title: "Car Detailing Manchester & Urmston | Full Car Detail Near Me",
     description:
-      "Professional car detailing in Manchester & Urmston. Full car detail, decontamination, machine polishing & protection at your door. 5★ rated. From £120. Call 07482 225323.",
+      "Professional car detailing in Manchester & Urmston. Full car detail, decontamination, machine polishing & protection at your door. 5★ rated. From £180. Call 07482 225323.",
   },
   "paint-correction": {
-    title: "Paint Correction Manchester & Urmston | Swirl Mark Removal Near Me",
+    title: "Paint Correction Manchester & Urmston | Swirl Mark Removal",
     description:
       "Machine paint correction in Manchester & Urmston — permanently remove swirl marks, scratches & oxidation. Mobile service at your door. From £300. Call 07482 225323.",
   },
   "machine-polishing": {
-    title: "Machine Polishing Manchester | Car Polish Near Me | Latin King Detailing",
+    title: "Machine Polishing Manchester | Car Polish Near Me",
     description:
       "Professional machine polishing in Manchester & Urmston. Restore gloss, remove mild swirl marks and prep paint for ceramic coating. Mobile service. From £80. Call 07482 225323.",
   },
   "ceramic-coating": {
-    title: "Ceramic Coating Manchester | Best Ceramic Coating UK | Latin King Detailing",
+    title: "Ceramic Coating Manchester | Best Ceramic Coating UK",
     description:
       "Best ceramic coating for cars in Manchester & Urmston — professional SiO₂ nano-coating lasts 2–3 years, hydrophobic & UV-resistant. Includes paint correction prep. From £180. Book now.",
   },
   "interior-detailing": {
-    title: "Interior Car Detailing Manchester | Car Seat Wash & Upholstery Clean Near Me",
+    title: "Interior Car Detailing Manchester | Seat & Upholstery Clean",
     description:
       "Deep interior car detailing in Manchester & Urmston — car seat shampoo, upholstery steam clean & odour elimination at your door. 5★ rated. From £80. Call 07482 225323.",
   },
   "exterior-detailing": {
-    title: "Car Cleaning Manchester & Urmston | Exterior Car Detailing Near Me",
+    title: "Car Cleaning Manchester & Urmston | Exterior Car Detailing",
     description:
       "Professional car cleaning in Manchester & Urmston. Clay bar decontamination, machine polish & wax or sealant protection — fully mobile exterior detailing. From £80. Book now.",
   },
   "deep-cleaning": {
-    title: "Full Car Detail Manchester | Deep Car Clean Near Me | Latin King Detailing",
+    title: "Full Car Detail Manchester | Deep Car Clean Near Me",
     description:
       "Complete full car detail in Manchester & Urmston — exterior wash, machine polish, interior hot water extraction, engine bay tidy & finishing protection in one visit. From £200.",
   },
   "engine-bay-cleaning": {
-    title: "Engine Bay Steam Clean Near Me | Manchester & Urmston | Latin King Detailing",
+    title: "Engine Bay Steam Clean Near Me | Manchester & Urmston",
     description:
       "Car engine steam cleaning in Manchester & Urmston. Safe degreaser & steam clean at your location — no garage needed. Electronics protected throughout. From £50. Call 07482 225323.",
   },
@@ -134,7 +134,7 @@ const SERVICE_CONTENT: Record<
     longDescription: [
       "Latin King Detailing is Urmston and Manchester's professional mobile car valet service — a true alternative to a hand car wash, bringing expert-grade cleaning directly to your home, workplace or any convenient location. You never need to leave your property or wait in a queue: we arrive fully equipped with our own water, power and professional-grade products.",
       "A mobile valet from Latin King Detailing is far removed from a forecourt wash-and-vac or automated car wash. We use pH-neutral shampoos, high-quality microfibre towels and the correct interior product for each surface — leather, fabric, hard plastic and glass — eliminating the risk of swirl marks or paint damage that brush-based car washes cause.",
-      "We offer both mini valet and full valet options across Urmston, Stretford, Sale, Manchester and all covered areas. A mini valet covers a safe exterior wash, wheel and tyre clean, window clean and a thorough vacuum and wipe-down of the interior. A full valet extends to hand-polish, seat shampoo or leather conditioning, door shuts, boot area and all interior trim surfaces.",
+      "We offer a complete full valet across Urmston, Stretford, Sale, Manchester and all covered areas. A full valet covers a safe exterior wash, wheel and tyre clean, window clean, a thorough vacuum and wipe-down of the interior, plus hand-polish, seat shampoo or leather conditioning, door shuts, boot area and all interior trim surfaces.",
     ],
     includes: [
       "Safe two-bucket or foam-cannon exterior wash",
@@ -160,7 +160,7 @@ const SERVICE_CONTENT: Record<
       {
         question: "How long does a mobile valet take?",
         answer:
-          "A mini valet typically takes 1.5–2 hours. A full valet takes 2.5–3.5 hours depending on vehicle size. SUVs and MPVs take slightly longer than standard hatchbacks.",
+          "A full valet takes 2.5–3.5 hours depending on vehicle size. SUVs and MPVs take slightly longer than standard hatchbacks.",
       },
       {
         question: "Do I need to provide water or electricity?",
@@ -468,7 +468,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service) return {};
   const meta = SERVICE_META[slug];
   return {
-    title: meta?.title ?? `${service.name} in Urmston & Manchester | Latin King Detailing`,
+    title: meta?.title ?? `${service.name} in Urmston & Manchester`,
     description: meta?.description ?? `${service.tagline}. Professional mobile ${service.name.toLowerCase()} across Urmston, Trafford and Greater Manchester. From £${service.priceFrom}. Call 07482 225323.`,
     alternates: { canonical: `/services/${slug}` },
   };
@@ -524,7 +524,7 @@ export default async function ServicePage({ params }: PageProps) {
               )}
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact" prefetch={false} className="btn btn-primary">
                   {SERVICE_CTA[slug]?.heroBtn ?? "Book This Service"}
                 </Link>
                 <a href={`tel:${BUSINESS.phone}`} className="btn btn-secondary">
@@ -533,7 +533,7 @@ export default async function ServicePage({ params }: PageProps) {
                 </a>
               </div>
               <p className="mt-3 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                No payment required — we&apos;ll confirm your quote before any work starts.
+                No payment needed when you book — a £50 deposit secures bookings over £100. We&apos;ll confirm your quote before any work starts.
               </p>
             </div>
 
@@ -578,11 +578,11 @@ export default async function ServicePage({ params }: PageProps) {
                 </div>
               )}
 
-              <Link href="/contact" className="btn btn-primary w-full justify-center">
+              <Link href="/contact" prefetch={false} className="btn btn-primary w-full justify-center">
                 {SERVICE_CTA[slug]?.cardBtn ?? "Get Free Quote"}
               </Link>
               <p className="mt-3 text-xs text-center" style={{ color: "rgba(255,255,255,0.5)" }}>
-                No upfront payment · Fixed quote before we start
+                £50 deposit on bookings over £100 · Fixed quote before we start
               </p>
             </div>
           </div>

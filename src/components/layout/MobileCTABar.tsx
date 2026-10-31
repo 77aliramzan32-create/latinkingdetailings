@@ -15,8 +15,12 @@ export function MobileCTABar() {
         <Phone size={16} aria-hidden="true" />
         Call Now
       </a>
+      {/* prefetch={false}: /contact carries the booking form (zod +
+          react-hook-form). Prefetching it would evaluate those heavy
+          dependencies on every page load, blocking the main thread. */}
       <Link
         href="/contact"
+        prefetch={false}
         className="btn btn-primary"
         aria-label="Get a free quote online"
       >

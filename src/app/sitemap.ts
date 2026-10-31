@@ -65,6 +65,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "ceramic-coating-cost-guide",
     "mini-valet-vs-full-valet",
     "paint-correction-vs-machine-polishing",
+    "ceramic-coating-manchester-cost-benefits",
+    "swirl-mark-removal-manchester",
+    "hand-car-wash-vs-mobile-valeting",
+    "engine-bay-steam-cleaning-safe",
+    "car-detailing-salford-guide",
   ].map((slug) => ({
     url: `${BASE}/blog/${slug}`,
     lastModified: now,

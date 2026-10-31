@@ -91,9 +91,9 @@ export const BUSINESS = {
       shortName: "Mobile Valet",
       tagline: "Professional valeting delivered to your door",
       description:
-        "Full interior and exterior mobile valet service — we come to your home, workplace or any convenient location across Greater Manchester. From a thorough mini valet to a complete full valet, every clean is carried out using premium products with meticulous attention to detail.",
-      priceFrom: 55,
-      duration: "1.5–3 hours",
+        "Full interior and exterior mobile valet service — we come to your home, workplace or any convenient location across Greater Manchester. Every clean is a complete full valet, carried out using premium products with meticulous attention to detail.",
+      priceFrom: 80,
+      duration: "2.5–3.5 hours",
       icon: "car",
     },
     {

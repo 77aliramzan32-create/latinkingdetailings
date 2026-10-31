@@ -219,6 +219,12 @@ export default function CeramicVsWaxPost() {
                 </span>
                 <ArrowRight size={14} className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: "rgba(255,255,255,0.3)" }} />
               </Link>
+              <a href="https://en.wikipedia.org/wiki/Clearcoat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group p-4 rounded-lg transition-colors" style={{ background: "var(--color-base-900)", border: "1px solid var(--color-border)" }}>
+                <span className="flex-1 text-sm font-medium group-hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  What is a clear coat? — Wikipedia (external reference)
+                </span>
+                <ArrowRight size={14} className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: "rgba(255,255,255,0.3)" }} />
+              </a>
             </div>
           </div>
         </div>

@@ -1,16 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Phone, Star, MapPin, ChevronDown } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
 
-const FADE_UP = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
-
+// Server component: entrance animation is pure CSS (.hero-fade-up /
+// .hero-scroll-in / .hero-bounce in globals.css) — no JS, no hydration.
 export function HeroSection() {
   return (
     <section
@@ -72,14 +66,12 @@ export function HeroSection() {
 
       {/* ── Content ── */}
       <div className="section-container relative z-10 pt-32 pb-20 lg:pt-36 lg:pb-24">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          style={{ maxWidth: "680px" }}
-        >
+        <div style={{ maxWidth: "680px" }}>
           {/* Trust row */}
-          <motion.div variants={FADE_UP} className="flex flex-wrap items-center gap-2 mb-7">
+          <div
+            className="hero-fade-up flex flex-wrap items-center gap-2 mb-7"
+            style={{ animationDelay: "0s" }}
+          >
             <div className="flex items-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} size={13} fill="currentColor" style={{ color: "var(--color-gold)" }} />
@@ -98,13 +90,13 @@ export function HeroSection() {
             >
               Professional Mobile Car Detailing · Manchester
             </span>
-          </motion.div>
+          </div>
 
           {/* H1 */}
-          <motion.h1
-            variants={FADE_UP}
-            className="mb-6"
+          <h1
+            className="hero-fade-up mb-6"
             style={{
+              animationDelay: "0.1s",
               fontFamily: "var(--font-barlow-condensed)",
               fontWeight: 900,
               letterSpacing: "-0.02em",
@@ -117,24 +109,30 @@ export function HeroSection() {
             Car Detailing in Manchester,
             <br />
             <span className="gradient-text-red">Delivered</span> to Your Door
-          </motion.h1>
+          </h1>
 
           {/* Description */}
-          <motion.p
-            variants={FADE_UP}
-            className="text-base md:text-lg mb-9 leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.62)", maxWidth: "52ch" }}
+          <p
+            className="hero-fade-up text-base md:text-lg mb-9 leading-relaxed"
+            style={{ animationDelay: "0.2s", color: "rgba(255,255,255,0.62)", maxWidth: "52ch" }}
           >
             Latin King Detailing is a professional mobile car detailing service
             based in Urmston, Manchester — specialising in interior &amp; exterior
             detailing, paint correction, ceramic coating and vehicle protection.
             We come to your home, workplace or any location convenient to you.
-          </motion.p>
+          </p>
 
           {/* CTAs */}
-          <motion.div variants={FADE_UP} className="flex flex-wrap gap-3 mb-5">
+          <div
+            className="hero-fade-up flex flex-wrap gap-3 mb-5"
+            style={{ animationDelay: "0.3s" }}
+          >
+            {/* prefetch={false}: /contact carries the booking form (zod +
+                react-hook-form). Prefetching it would evaluate those heavy
+                dependencies on every page load, blocking the main thread. */}
             <Link
               href="/contact"
+              prefetch={false}
               className="btn btn-primary"
               style={{ fontSize: "1rem", padding: "0.875rem 1.75rem" }}
               aria-label="Get a free, no-obligation quote for mobile car detailing"
@@ -150,17 +148,19 @@ export function HeroSection() {
               <Phone size={16} />
               {BUSINESS.phoneDisplay}
             </a>
-          </motion.div>
-          <motion.p
-            variants={FADE_UP}
-            className="text-xs mb-7"
-            style={{ color: "rgba(255,255,255,0.35)" }}
+          </div>
+          <p
+            className="hero-fade-up text-xs mb-7"
+            style={{ animationDelay: "0.4s", color: "rgba(255,255,255,0.35)" }}
           >
-            No payment required · Fixed quote before we start · Open 24/7
-          </motion.p>
+            £50 deposit on bookings over £100 · Fixed quote before we start · Open 24/7
+          </p>
 
           {/* Location chips */}
-          <motion.div variants={FADE_UP} className="flex flex-wrap items-center gap-2">
+          <div
+            className="hero-fade-up flex flex-wrap items-center gap-2"
+            style={{ animationDelay: "0.5s" }}
+          >
             <MapPin size={13} style={{ color: "var(--color-accent-500)" }} />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.38)" }}>
               Serving Manchester &amp; surrounding areas:
@@ -178,25 +178,22 @@ export function HeroSection() {
                 {area}
               </span>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      <div
+        className="hero-scroll-in absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
         <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.28)" }}>
           Scroll
         </span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.4 }}>
+        <div className="hero-bounce">
           <ChevronDown size={18} style={{ color: "rgba(255,255,255,0.28)" }} />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
